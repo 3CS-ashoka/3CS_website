@@ -57,11 +57,7 @@ export function EHUSS() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             After all, if for some reason, we cannot innovate our way out of climate change, then adaptation through a profound transformation in our culture of consumption, production and sensibility towards the environment may be the only way out for humanity to survive. While EHUSS raises important questions, deliberates on long-term transformations, and seeks to make a softer and long-term impact on how we related to nature through research, communication, and education, the EHUSS also aims to collaborate with other verticals in 3CS and through 3CS with other centres at Ashoka to co-solve environmental challenges facing India.
           </p>
-        </div>
-      </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-4xl">Ongoing Projects</h2>
           <div className="space-y-6 mb-16">
             {ongoingProjects.map((project, index) => (

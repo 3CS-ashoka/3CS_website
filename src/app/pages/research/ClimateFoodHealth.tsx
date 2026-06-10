@@ -41,11 +41,7 @@ export function ClimateFoodHealth() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             This research area will examine how climate change is reshaping food systems, nutrition, disease patterns, and livelihoods. It will focus on the interconnected challenges of agricultural stress, food insecurity, heat exposure, water-related risks, and changing health outcomes, while identifying pathways for resilience and sustainable adaptation. By linking research across agriculture, health, sustainability, and livelihoods, the Centre will generate evidence to inform policy, strengthen community resilience, and support more equitable development pathways.
           </p>
-        </div>
-      </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-4xl">Ongoing Projects</h2>
           <div className="space-y-6 mb-16">
             {ongoingProjects.map((project, index) => (

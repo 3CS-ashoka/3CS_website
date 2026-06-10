@@ -37,11 +37,7 @@ export function AIClimate() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             By integrating computational tools with ecological science and transparent data protocols, the Centre will help build credible, lower-cost, and scalable systems for climate action and finance. Alongside this, the Centre will also support the independent evaluation of emerging carbon removal approaches such as Enhanced Rock Weathering (ERW), with a focus on real-world performance, net carbon balance, and long-term permanence. In partnership with institutions such as IISc and the IITs, 3CS will help develop robust measurement standards and field-validation frameworks to ensure that these technologies are assessed on the basis of credible evidence, enabling more informed investment, policy, and deployment decisions.
           </p>
-        </div>
-      </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-4xl">Ongoing Projects</h2>
           <div className="space-y-6 mb-16">
             {ongoingProjects.map((project, index) => (

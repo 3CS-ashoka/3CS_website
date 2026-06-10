@@ -53,11 +53,7 @@ export function ClimateAdaptation() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             Parallelly, mangrove ecosystems along the Bay of Bengal, globally significant blue carbon reservoirs, offer a critical opportunity for climate adaptation and resilience. In mature systems, sediment organic carbon typically makes up ~3-5% of soil mass, with radiocarbon ages of ~4,000-5,000 years, reflecting long-term carbon removal. Restoring these ecosystems can strengthen coastal resilience while rebuilding ecosystem integrity and long-term carbon removal through mangrove restoration, tidal exchange, and sediment stabilization. Together, these efforts position biodiversity assessments and ecosystem restoration as core strategies across some of India's most climate-sensitive regions.
           </p>
-        </div>
-      </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-4xl">Ongoing Projects</h2>
           <div className="space-y-6 mb-16">
             {ongoingProjects.map((project, index) => (

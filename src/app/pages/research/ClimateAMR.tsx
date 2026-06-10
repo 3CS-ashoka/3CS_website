@@ -33,11 +33,7 @@ export function ClimateAMR() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             This vertical will focus on understanding how climate change influences antimicrobial resistance (AMR) in soil and water systems, followed by devising strategies to mitigate the abundance of AMR. It will examine how climate change and environmental degradation accelerate the emergence, persistence, and spread of resistant microbes and genes across interconnected wildlife, livestock, human, soil, and water systems. Bacterial AMR was associated with an estimated 4.71 million deaths globally in 2021, including 1.14 million deaths directly attributable to resistance, while 42% of household wastewater was not safely treated in 2022, releasing an estimated 113 billion m³ into the environment and increasing contamination risks for soils and water bodies. By integrating research on climate stress, environmental monitoring, microbial ecology, and public health, and by exploring novel antibiotics comprised of antimicrobial peptides, which have evolved over approximately 2 billion years, the Centre will generate evidence and practical pathways to reduce environmental AMR and support more sustainable and equitable health and environmental outcomes.
           </p>
-        </div>
-      </section>
 
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-8 text-4xl">Ongoing Projects</h2>
           <div className="space-y-6 mb-16">
             {ongoingProjects.map((project, index) => (
