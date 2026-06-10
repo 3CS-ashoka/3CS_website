@@ -1,38 +1,4 @@
-import aalokThakkar from "../../../imports/Dr._Aalok_Thakkar.jpg";
-import debayanGupta from "../../../imports/Dr._Debayan_Gupta.jpg";
-import gautamMenon from "../../../imports/Dr._Gautam_Menon.jpg";
-import rintuKutum from "../../../imports/Dr._Rintu_Kutum.jpg";
-import sandeepJuneja from "../../../imports/Dr._Sandeep_Juneja.jpg";
-
 export function AIClimate() {
-  const people = [
-    {
-      name: "Dr. Aalok Thakkar",
-      profileUrl: "https://www.ashoka.edu.in/profile/aalok-thakkar/",
-      imageUrl: aalokThakkar
-    },
-    {
-      name: "Dr. Debayan Gupta",
-      profileUrl: "https://www.ashoka.edu.in/profile/debayan-gupta/",
-      imageUrl: debayanGupta
-    },
-    {
-      name: "Dr. Gautam Menon",
-      profileUrl: "https://www.ashoka.edu.in/profile/gautam-menon-2/",
-      imageUrl: gautamMenon
-    },
-    {
-      name: "Dr. Rintu Kutum",
-      profileUrl: "https://www.ashoka.edu.in/profile/rintu-kutum/",
-      imageUrl: rintuKutum
-    },
-    {
-      name: "Dr. Sandeep Juneja",
-      profileUrl: "https://www.ashoka.edu.in/profile/sandeep-juneja/",
-      imageUrl: sandeepJuneja
-    }
-  ].sort((a, b) => a.name.localeCompare(b.name));
-
   const ongoingProjects = [
     {
       title: "Cost-Effective Air Quality Monitoring with Decision Support",
@@ -71,39 +37,6 @@ export function AIClimate() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             By integrating computational tools with ecological science and transparent data protocols, the Centre will help build credible, lower-cost, and scalable systems for climate action and finance. Alongside this, the Centre will also support the independent evaluation of emerging carbon removal approaches such as Enhanced Rock Weathering (ERW), with a focus on real-world performance, net carbon balance, and long-term permanence. In partnership with institutions such as IISc and the IITs, 3CS will help develop robust measurement standards and field-validation frameworks to ensure that these technologies are assessed on the basis of credible evidence, enabling more informed investment, policy, and deployment decisions.
           </p>
-        </div>
-      </section>
-
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-4xl">People</h2>
-          <div className="flex justify-center gap-8 pb-4 flex-wrap">
-            {people.map((person, index) => (
-              <div key={index} className="flex-shrink-0 text-center">
-                {person.profileUrl ? (
-                  <a href={person.profileUrl} target="_blank" rel="noopener noreferrer" className="block">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mb-4 mx-auto border-4 border-[#0d3862] hover:border-[#1a5280] transition-all">
-                      <img
-                        src={person.imageUrl}
-                        alt={person.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <p className="text-gray-700 font-medium whitespace-nowrap hover:text-[#0d3862] transition-colors">{person.name}</p>
-                  </a>
-                ) : (
-                  <>
-                    <div className="w-32 h-32 bg-[#0d3862] rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700 font-medium whitespace-nowrap">{person.name}</p>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

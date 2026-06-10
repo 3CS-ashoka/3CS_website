@@ -1,44 +1,4 @@
-import gauravGarg from "../../../imports/Image_1.jpg";
-import divyaKarnad from "../../../imports/Image_2-1.jpg";
-import imrozeKhan from "../../../imports/Image_3-1.jpg";
-import manviSharma from "../../../imports/Image_4.jpg";
-import meghnaAgarwala from "../../../imports/Image_5.jpg";
-import shivaniKrishna from "../../../imports/Image_6.jpg";
-
 export function ClimateAdaptation() {
-  const people = [
-    {
-      name: "Dr. Divya Karnad",
-      profileUrl: "https://www.ashoka.edu.in/profile/divya-karnad/",
-      imageUrl: divyaKarnad
-    },
-    {
-      name: "Dr. Gaurav Garg",
-      profileUrl: "https://www.ashoka.edu.in/profile/gaurav-c-garg/",
-      imageUrl: gauravGarg
-    },
-    {
-      name: "Dr. Imroze Khan",
-      profileUrl: "https://www.ashoka.edu.in/profile/imroze-khan/",
-      imageUrl: imrozeKhan
-    },
-    {
-      name: "Dr. Manvi Sharma",
-      profileUrl: "https://www.ashoka.edu.in/profile/manvi-sharma/",
-      imageUrl: manviSharma
-    },
-    {
-      name: "Dr. Meghna Agarwala",
-      profileUrl: "https://www.ashoka.edu.in/profile/meghna-agarwala/",
-      imageUrl: meghnaAgarwala
-    },
-    {
-      name: "Dr. Shivani Krishna",
-      profileUrl: "https://www.ashoka.edu.in/profile/shivani-krishna/",
-      imageUrl: shivaniKrishna
-    }
-  ].sort((a, b) => a.name.localeCompare(b.name));
-
   const ongoingProjects = [
     {
       title: "Impact of Climate Change on Small Mammal Communities and Risks of Spillover Infections",
@@ -93,28 +53,6 @@ export function ClimateAdaptation() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             Parallelly, mangrove ecosystems along the Bay of Bengal, globally significant blue carbon reservoirs, offer a critical opportunity for climate adaptation and resilience. In mature systems, sediment organic carbon typically makes up ~3-5% of soil mass, with radiocarbon ages of ~4,000-5,000 years, reflecting long-term carbon removal. Restoring these ecosystems can strengthen coastal resilience while rebuilding ecosystem integrity and long-term carbon removal through mangrove restoration, tidal exchange, and sediment stabilization. Together, these efforts position biodiversity assessments and ecosystem restoration as core strategies across some of India's most climate-sensitive regions.
           </p>
-        </div>
-      </section>
-
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-4xl">People</h2>
-          <div className="flex justify-center gap-8 pb-4 flex-wrap">
-            {people.map((person, index) => (
-              <div key={index} className="flex-shrink-0 text-center">
-                <a href={person.profileUrl} target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 mx-auto border-4 border-[#0d3862] hover:border-[#1a5280] transition-all">
-                    <img
-                      src={person.imageUrl}
-                      alt={person.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-gray-700 font-medium whitespace-nowrap hover:text-[#0d3862] transition-colors">{person.name}</p>
-                </a>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

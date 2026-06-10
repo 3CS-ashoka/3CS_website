@@ -1,6 +1,25 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router";
 import { SDGLogo } from "../components/SDGLogo";
 
 export function Home() {
+  const images = [
+    "/images/1.jpg",
+    "/images/2.jpeg",
+    "/images/3.jpeg",
+    "/images/4.jpeg",
+    "/images/5.jpeg",
+    "/images/6.jpeg"
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const focusAreas = [
     {
       icon: (
@@ -9,7 +28,8 @@ export function Home() {
         </svg>
       ),
       title: "Research",
-      description: "Advancing research on climate change and sustainability through interdisciplinary working groups spanning climate science, adaptation, and policy."
+      description: "Advancing research on climate change and sustainability through interdisciplinary working groups spanning climate science, adaptation, and policy.",
+      path: "/research"
     },
     {
       icon: (
@@ -18,7 +38,8 @@ export function Home() {
         </svg>
       ),
       title: "Innovation",
-      description: "Translating research into sustainable innovation and policy making through industry-academia partnerships and practical solutions."
+      description: "Translating research into sustainable innovation and policy making through industry-academia partnerships and practical solutions.",
+      path: "/innovation"
     },
     {
       icon: (
@@ -27,7 +48,8 @@ export function Home() {
         </svg>
       ),
       title: "Initiatives",
-      description: "Strengthening public understanding and building capacity through Community Engagement, training programs, workshops, and innovative educational initiatives."
+      description: "Strengthening public understanding and building capacity through Community Engagement, training programs, workshops, and innovative educational initiatives.",
+      path: "/education"
     },
     {
       icon: (
@@ -36,24 +58,41 @@ export function Home() {
         </svg>
       ),
       title: "Sustainability at Ashoka",
-      description: "Promoting sustainable practices across campus operations, infrastructure, and community engagement to create a model for environmental stewardship in higher education."
+      description: "Promoting sustainable practices across campus operations, infrastructure, and community engagement to create a model for environmental stewardship in higher education.",
+      path: "/sustainability"
     }
   ];
 
   return (
     <div>
-      <section className="relative bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[#0d2238] text-white py-32 overflow-hidden">
+        {/* Background Slideshow */}
+        <div className="absolute inset-0 z-0">
+          {images.map((src, index) => (
+            <div
+              key={src}
+              className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+              style={{
+                backgroundImage: `url(${src})`,
+                opacity: index === currentImageIndex ? 0.35 : 0,
+              }}
+            />
+          ))}
+          {/* Dark overlay for contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h1 className="mb-6 text-5xl leading-tight">Centre for Climate Change and Sustainability</h1>
+            <h1 className="mb-6 text-5xl leading-tight font-bold">Centre for Climate Change and Sustainability</h1>
             <p className="text-2xl mb-12 text-gray-100 leading-relaxed">
               Advancing interdisciplinary research, innovation, and action on climate change and sustainability at Ashoka University.
             </p>
             <div className="flex gap-4">
-              <a href="/about" className="bg-white text-[#0d3862] px-8 py-4 rounded-md hover:bg-gray-100 transition-all text-lg">
+              <a href="/about" className="bg-white text-[#0d3862] px-8 py-4 rounded-md hover:bg-gray-100 transition-all text-lg font-medium shadow-md">
                 Learn More
               </a>
-              <a href="/research" className="border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg">
+              <a href="/research" className="border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg font-medium shadow-md">
                 Our Research
               </a>
             </div>
@@ -72,17 +111,17 @@ export function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {focusAreas.map((area, index) => (
-              <div key={index} className="group bg-white border-2 border-gray-200 p-6 md:p-10 rounded-lg hover:border-[#0d3862] hover:shadow-xl transition-all duration-300">
+              <Link key={index} to={area.path} className="group bg-white border-2 border-gray-200 p-6 md:p-10 rounded-lg hover:border-[#0d3862] hover:shadow-xl transition-all duration-300 block">
                 <div className="w-16 h-16 md:w-20 md:h-20 bg-[#0d3862] rounded-full flex items-center justify-center mb-4 md:mb-6 transition-all">
                   <div className="text-white transition-all">
                     {area.icon}
                   </div>
                 </div>
-                <h3 className="mb-3 md:mb-4 text-xl md:text-2xl text-[#0d3862]">{area.title}</h3>
+                <h3 className="mb-3 md:mb-4 text-xl md:text-2xl text-[#0d3862] group-hover:underline">{area.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   {area.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

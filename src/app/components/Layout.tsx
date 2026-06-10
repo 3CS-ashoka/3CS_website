@@ -18,7 +18,6 @@ export function Layout() {
 
   const researchDropdownItems = [
     { path: "/research", label: "Theme" },
-    { path: "/people", label: "People" },
     { path: "/publications", label: "Publications" },
   ];
 
