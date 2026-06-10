@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
 import logo from "../../imports/3cs_(1)-1.png";
 
@@ -6,6 +6,10 @@ export function Layout() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isResearchDropdownOpen, setIsResearchDropdownOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const navLinks = [
     { path: "/", label: "Home" },
