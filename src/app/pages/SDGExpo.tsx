@@ -1,14 +1,29 @@
+import { HeroBanner } from "../components/HeroBanner";
+
 export function SDGExpo() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">SDG Expo at Ashoka University</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed text-justify">
+      <HeroBanner images={[
+        '/images/photos/sdg-expo/IMG_8767.JPG',
+        '/images/photos/sdg-expo/IMG_8790.JPG',
+        '/images/photos/sdg-expo/IMG_8811.JPG',
+        '/images/photos/sdg-expo/IMG_8831.JPG',
+        '/images/photos/sdg-expo/IMG_9173.JPG',
+        '/images/photos/sdg-expo/IMG_9370.JPG',
+        '/images/photos/sdg-expo/IMG_9401.JPG',
+        '/images/photos/sdg-expo/IMG_9448.JPG',
+        '/images/photos/sdg-expo/_MG_9522.JPG',
+        '/images/photos/sdg-expo/_MG_9551.JPG',
+        '/images/photos/sdg-expo/_MG_9650.JPG',
+        '/images/photos/sdg-expo/_MG_9679.JPG'
+      ]} className="py-24">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">SDG Expo at Ashoka University</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             Celebrating the United Nations' Sustainable Development Goals through innovation, collaboration, and community engagement
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

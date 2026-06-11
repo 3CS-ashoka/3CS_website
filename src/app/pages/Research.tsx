@@ -1,4 +1,5 @@
 import { ScrollReveal } from "../components/ScrollReveal";
+import { HeroBanner } from "../components/HeroBanner";
 
 export function Research() {
   const researchVerticals = [
@@ -76,14 +77,14 @@ export function Research() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Research</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
+      <HeroBanner images={['/images/photos/research/IMG20240916085837.jpg']} className="py-24">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">Research</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             Interdisciplinary working groups advancing climate science and sustainability solutions
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

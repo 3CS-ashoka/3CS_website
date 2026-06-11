@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
 import { SDGBackground } from "../components/SDGBackground";
+import { HeroBanner } from "../components/HeroBanner";
 import integratedDesign from "../../imports/Integrated_Design_for_Sustainable_Living.jpg";
 import evCharging from "../../imports/EV_Charging_Points.jpg";
 import rainWater from "../../imports/Rain_Water_Harvesting.png";
@@ -187,14 +188,19 @@ export function Sustainability() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Sustainability at Ashoka</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
+      <HeroBanner images={[
+        '/images/photos/sustainability/IMG_0036.JPG',
+        '/images/photos/sustainability/IMG_0049.JPG',
+        '/images/photos/sustainability/IMG_1888.jpeg',
+        '/images/photos/sustainability/IMG_3424.JPG'
+      ]} className="py-24">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">Sustainability at Ashoka</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             Creating a sustainable and eco-friendly campus that fosters academic excellence and environmental responsibility
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-24 relative">
         <SDGBackground />

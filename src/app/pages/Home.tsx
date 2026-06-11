@@ -1,24 +1,16 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { SDGLogo } from "../components/SDGLogo";
+import { HeroBanner } from "../components/HeroBanner";
 
 export function Home() {
   const images = [
-    "/images/1.jpg",
-    "/images/2.jpeg",
-    "/images/3.jpeg",
-    "/images/4.jpeg",
-    "/images/5.jpeg",
-    "/images/6.jpeg"
+    "/images/photos/home/Doriya_River_of_Majuli.jpg",
+    "/images/photos/home/IMG20241116170255 (1).jpg",
+    "/images/photos/home/v2 (10).jpeg",
+    "/images/photos/home/v2 (6).jpeg",
+    "/images/photos/home/v2 (7).jpeg",
+    "/images/photos/home/v2 (9).jpeg"
   ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   const focusAreas = [
     {
@@ -65,40 +57,22 @@ export function Home() {
 
   return (
     <div>
-      <section className="relative bg-[#0d2238] text-white py-32 overflow-hidden">
-        {/* Background Slideshow */}
-        <div className="absolute inset-0 z-0">
-          {images.map((src, index) => (
-            <div
-              key={src}
-              className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-              style={{
-                backgroundImage: `url(${src})`,
-                opacity: index === currentImageIndex ? 0.35 : 0,
-              }}
-            />
-          ))}
-          {/* Dark overlay for contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="mb-6 text-5xl leading-tight font-bold">Centre for Climate Change and Sustainability</h1>
-            <p className="text-2xl mb-12 text-gray-100 leading-relaxed">
-              Advancing interdisciplinary research, innovation, and action on climate change and sustainability at Ashoka University.
-            </p>
-            <div className="flex gap-4">
-              <a href="/about" className="bg-white text-[#0d3862] px-8 py-4 rounded-md hover:bg-gray-100 transition-all text-lg font-medium shadow-md">
-                Learn More
-              </a>
-              <a href="/research" className="border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg font-medium shadow-md">
-                Our Research
-              </a>
-            </div>
+      <HeroBanner images={images} className="py-32">
+        <div className="max-w-4xl">
+          <h1 className="mb-6 text-5xl leading-tight font-bold">Centre for Climate Change and Sustainability</h1>
+          <p className="text-2xl mb-12 text-gray-100 leading-relaxed">
+            Advancing interdisciplinary research, innovation, and action on climate change and sustainability at Ashoka University.
+          </p>
+          <div className="flex gap-4">
+            <a href="/about" className="bg-white text-[#0d3862] px-8 py-4 rounded-md hover:bg-gray-100 transition-all text-lg font-medium shadow-md">
+              Learn More
+            </a>
+            <a href="/research" className="border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg font-medium shadow-md">
+              Our Research
+            </a>
           </div>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,65 +101,69 @@ export function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="mb-6 text-4xl">Upcoming Events</h2>
-            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-              Join us for upcoming events and workshops at the Centre for Climate Change and Sustainability
-            </p>
-          </div>
+      <HeroBanner images={['/images/photos/upcoming-events/_MG_9650.JPG']} className="py-24">
+        <div className="text-center mb-16">
+          <h2 className="mb-6 text-4xl">Upcoming Events</h2>
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+            Join us for upcoming events and workshops at the Centre for Climate Change and Sustainability
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-[#0d3862] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl text-[#0d3862] mb-1">Healing Earth Workshop</h3>
-                  <p className="text-gray-600">Annual Flagship Event</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed">
-                The Healing Earth Workshop is a flagship annual event organised by the Centre for Climate Change and Sustainability (3CS) to facilitate conversations around the effects of the climate crisis and its wider impact on our world today. Launched in 2021, the workshop aims to bring together researchers, practitioners, and faculty to explore the links, trade-offs, and tensions at the nexus of climate change, health, and ecosystems.
-              </p>
-            </div>
-
-            <a href="/sdg-expo" className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300 block group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
-                  <SDGLogo className="w-16 h-16" />
-                </div>
-                <div>
-                  <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">SDG Expo</h3>
-                  <p className="text-gray-600">Annual Sustainability Showcase</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed">
-                The SDG Expo at Ashoka University marks the observance of UN SDG Day by creating a dynamic platform to showcase the university's commitment to sustainable development. Bringing together students, faculty, and partners, the Expo highlights innovative projects, research, and initiatives aligned with the Sustainable Development Goals.
-              </p>
-              <div className="mt-4 inline-flex items-center text-[#0d3862] gap-2 group-hover:gap-3 transition-all">
-                <span>Learn more about SDG Expo</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <a href="/healing-earth-workshop" className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300 block group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 bg-[#0d3862] rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-            </a>
-          </div>
-
-          <div className="text-center mt-12">
-            <a href="https://www.ashoka.edu.in/events/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white border-2 border-white px-8 py-3 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg">
-              <span>Click here to view more upcoming events</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <div>
+                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">Healing Earth Workshop</h3>
+                <p className="text-gray-600">Annual Flagship Event</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              The Healing Earth Workshop is a flagship annual event organised by the Centre for Climate Change and Sustainability (3CS) to facilitate conversations around the effects of the climate crisis and its wider impact on our world today. Launched in 2021, the workshop aims to bring together researchers, practitioners, and faculty to explore the links, trade-offs, and tensions at the nexus of climate change, health, and ecosystems.
+            </p>
+            <div className="mt-4 inline-flex items-center text-[#0d3862] gap-2 group-hover:gap-3 transition-all">
+              <span>Learn more about Healing Earth Workshop</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </a>
-          </div>
+            </div>
+          </a>
+
+          <a href="/sdg-expo" className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300 block group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
+                <SDGLogo className="w-16 h-16" />
+              </div>
+              <div>
+                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">SDG Expo</h3>
+                <p className="text-gray-600">Annual Sustainability Showcase</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              The SDG Expo at Ashoka University marks the observance of UN SDG Day by creating a dynamic platform to showcase the university's commitment to sustainable development. Bringing together students, faculty, and partners, the Expo highlights innovative projects, research, and initiatives aligned with the Sustainable Development Goals.
+            </p>
+            <div className="mt-4 inline-flex items-center text-[#0d3862] gap-2 group-hover:gap-3 transition-all">
+              <span>Learn more about SDG Expo</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
         </div>
-      </section>
+
+        <div className="text-center mt-12">
+          <a href="https://www.ashoka.edu.in/events/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white border-2 border-white px-8 py-3 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg">
+            <span>Click here to view more upcoming events</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </HeroBanner>
 
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -278,7 +256,7 @@ export function Home() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-[#0077b5] rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl text-[#0077b5]">LinkedIn</h3>
@@ -299,7 +277,7 @@ export function Home() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl text-pink-600">Instagram</h3>

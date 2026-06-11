@@ -16,6 +16,7 @@ import { AIClimate } from "./pages/research/AIClimate";
 import { EHUSS } from "./pages/research/EHUSS";
 import { ClimatePolicy } from "./pages/research/ClimatePolicy";
 import { EnergyMobility } from "./pages/research/EnergyMobility";
+import { HealingEarthWorkshop } from "./pages/HealingEarthWorkshop";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,7 @@ export const router = createBrowserRouter([
       { path: "education", Component: Education },
       { path: "sustainability", Component: Sustainability },
       { path: "sdg-expo", Component: SDGExpo },
+      { path: "healing-earth-workshop", Component: HealingEarthWorkshop },
     ],
   },
 ]);

@@ -3,18 +3,19 @@ import shivaniKrishna from "../../imports/Image_2.jpg";
 import gauravGarg from "../../imports/Image_3.jpg";
 import rohithUnnikrishnan from "../../imports/Image_4.jfif";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { HeroBanner } from "../components/HeroBanner";
 
 export function About() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">About 3CS</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
+      <HeroBanner images={['/images/photos/about/v2 (5).jpeg']} className="py-24">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">About 3CS</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             The Centre for Climate Change and Sustainability at Ashoka University
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,13 +72,13 @@ export function About() {
             </div>
 
             <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-              <div className="block">
+              <a href="https://www.linkedin.com/in/unnikrishnanrohith" target="_blank" rel="noopener noreferrer" className="block">
                 <img src={rohithUnnikrishnan} alt="Rohith Unnikrishnan" className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl text-[#0d3862] mb-2">Rohith Unnikrishnan</h3>
                   <p className="text-gray-600 leading-relaxed">Deputy Manager</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

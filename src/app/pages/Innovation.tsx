@@ -1,14 +1,16 @@
+import { HeroBanner } from "../components/HeroBanner";
+
 export function Innovation() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Innovation</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
+      <HeroBanner images={['/images/photos/innovation/IMG_8873.JPG', '/images/photos/innovation/IMG_9279.JPG']} className="py-24">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">Innovation</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             Translating research into sustainable innovation and policy making
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

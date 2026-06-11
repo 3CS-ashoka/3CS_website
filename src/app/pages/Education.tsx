@@ -1,41 +1,28 @@
+import { HeroBanner } from "../components/HeroBanner";
+
 export function Education() {
   const programs = [
-    {
-      title: "Master's Programme in Climate Change, Sustainability, and AI",
-      description: "A one-year signature offering of the Centre, combining interdisciplinary training in climate science, sustainability, policy, and governance with applied skills in data and artificial intelligence. Designed to be both academically rigorous and practice-oriented."
-    },
     {
       title: "3CS Distinguished Lecture Series",
       description: "A public lecture series featuring leading voices on climate and society, including writers, scholars, artists, and practitioners."
     },
     {
-      title: "Nature & Climate Photography Prize",
-      description: "A national prize for school students across India to encourage creative engagement with questions of nature, environment, and climate change."
-    },
-    {
-      title: "Summer School and Certificate Programmes",
-      description: "Short practice-oriented programmes covering climate fundamentals, data literacy, reporting and communication, paired with internships. Can be offered in partnership with Ashoka's Young Scholars Programme or Horizons Achievers Programme."
-    },
-    {
-      title: "Conference on Communicating Climate Change",
-      description: "A national-level convening focused on how school students can understand, interpret, and communicate climate change more effectively."
-    },
-    {
-      title: "Permanent Collaborative Climate Mural",
-      description: "A visible and lasting artwork on campus, co-created with students and collaborators, that serves as an anchor for campus engagement and public conversation."
+      title: "LiveGreen@Ashoka",
+      description: "LiveGreen@Ashoka is a university-wide sustainability endeavour led by students and staff. It is a tangible manifestation of the university's commitment to transforming its campus into a living lab for circular economy innovations and sustainable practices, serving as a model for other academic institutions. The initiative's mission was to create a strong connection within the Ashoka community and inspire everyone to adopt sustainable choices on campus.",
+      link: "https://www.ashoka.edu.in/livegreenashoka/"
     }
   ];
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Education & Training</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
+      <HeroBanner images={['/images/photos/initiatives/PXL_20250612_113820874.PORTRAIT.ORIGINAL.jpg']} className="py-16">
+        <div className="max-w-3xl">
+          <h1 className="mb-6 text-5xl font-bold drop-shadow-md">Education & Training</h1>
+          <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
             Strengthening public understanding and building capacity for climate action
           </p>
         </div>
-      </section>
+      </HeroBanner>
 
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +35,15 @@ export function Education() {
           <div className="space-y-8">
             {programs.map((program, index) => (
               <div key={index} className="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-                <h3 className="mb-4 text-2xl text-[#0d3862]">{program.title}</h3>
+                <h3 className="mb-4 text-2xl text-[#0d3862]">
+                  {program.link ? (
+                    <a href={program.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {program.title}
+                    </a>
+                  ) : (
+                    program.title
+                  )}
+                </h3>
                 <p className="text-gray-700 text-lg leading-relaxed text-justify">{program.description}</p>
               </div>
             ))}
