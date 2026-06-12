@@ -5,6 +5,65 @@ import rohithUnnikrishnan from "../../imports/Image_4.jfif";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { HeroBanner } from "../components/HeroBanner";
 
+const impactsData = [
+  {
+    title: "The Indian Plant Humanities Project",
+    author: "Sumana Roy",
+    content: [
+      "The Indian Plant Humanities project has been initiated to construct an archive encompassing creative and critical perspectives on plant life from the Indian subcontinent over the past two millennia.",
+      "The project documents a rich spectrum of Indian contributions, from classical Sanskrit metaphors of nature to J.C. Bose’s insights on plants and Tamil and Kannada poetry on women-tree sisterhoods. Supported by scholars from Harvard, Yale, and more, it aims to create a unique English-translated archive, showcasing India's Plant Humanities globally."
+    ]
+  },
+  {
+    title: "Amphibious Lives",
+    author: "Mitul Baruah",
+    content: [
+      "This research project focuses on the island of Majuli, situated in the Brahmaputra River, which has undergone significant environmental transformations over the years due to flooding, riverbank erosion, and climate change.",
+      "The research has unveiled the symbiotic relationships that the islanders have with the river and the broader natural environment, emphasising the river's dual role as a source of both destruction and livelihood. Additionally, it has shed light on the islanders' dependence on the chaporis and their coexistence with animals, domestic and wild, in these unique landscapes."
+    ]
+  },
+  {
+    title: "Seed Stories",
+    author: "Aniket Aga and Chitrangada",
+    content: [
+      "Seed Stories as an initiative stands as the world's largest project of its kind, unfolding in the Eastern Ghats, a global biodiversity hotspot. The region, inhabited by Indigenous communities like the Kondhs, has nurtured a profound knowledge of diverse crop cultivation using traditional seeds developed over centuries.",
+      "In essence, Seed Stories emerges as more than just a documentary—it is a call to action, an exploration of sustainable practices, and a testament to the resilience of Indigenous knowledge in the face of rapidly advancing agricultural technologies. Through its compelling narrative, the film seeks to bridge the gap between academia, journalism, and grassroots activism, igniting a dialogue that transcends geographic boundaries and speaks to the universal concerns of food security, ecological integrity, and social justice."
+    ]
+  },
+  {
+    title: "Impact of Climate Change on Biotic Communities and Risks of Disease Spillover",
+    author: "Imroze Khan, Shivani Krishna, Kritika Garg, and Balaji Chattopadhyay",
+    content: [
+      "Studying climate change and habitat degradation's impact on wildlife helps implement conservation measures to protect species, sustain ecosystems, and promote sustainability. Longitudinal data tracking trends over time aids in predicting disease outbreaks and changing public health interventions accordingly.",
+      "This study's findings can be utilised to educate communities, governments, and healthcare professionals on the importance of recognizing the links between environmental changes and infectious diseases, lowering the risk of zoonotic spillovers."
+    ]
+  },
+  {
+    title: "Drivers of Crop Residue Burning and its Mitigation",
+    author: "Meghna Agarwala and Aparajita Dasgupta",
+    content: [
+      "Crop residue burning (CRB) poses a significant challenge in North India, impacting climate, weather patterns, and public health in the Indo-Gangetic Plains. The study successfully mapped CRB at high resolution, offering a more detailed understanding of its distribution.",
+      "The research, spanning from 2021 to June 2023, initially formulated three hypotheses for CRB drivers. First, it explored the impact of the \"sub-soil surface water ban\" in Punjab and Haryana. Second, it investigated the trade-off between agricultural production, labour, and machinery. Lastly, it considered political cycles as potential influencers. To enhance insights, surveys were conducted across two states, and this grant facilitated the digitization of survey data, making it usable for analysis."
+    ]
+  },
+  {
+    title: "Re-Purposing Universities for Sustainable Societies: The Integrated Sustainability Model at Ashoka",
+    author: "Anirban Chakraborty and L.S. Shashidhara",
+    content: [
+      "This project aimed to measure and compare sustainability performance across Indian universities, starting with a comprehensive review of Ashoka University's model using observations, data analysis, document reviews, and stakeholder interactions.",
+      "The research emphasizes a holistic approach to sustainability in universities, integrating environmental, social, and economic perspectives. By analyzing an Indian university's model, it lays the groundwork for evaluating sustainability practices across higher education institutions in India."
+    ]
+  },
+  {
+    title: "Sustainable oceans require paying attention to what you eat and what you don’t",
+    author: "Divya Karnad and Debayan Gupta",
+    content: [
+      "The InSeason Fish Project advocates sustainable marine conservation by promoting diverse seafood consumption, reducing impacts on endangered species, and raising awareness about ocean health.",
+      "The project examines human behavior, seafood consumption, and marine life interactions. The project highlights the potential of aligning culinary choices with conservation, setting a precedent for responsible engagement with marine ecosystems."
+    ]
+  }
+];
+
 export function About() {
   return (
     <div>
@@ -32,6 +91,28 @@ export function About() {
             <p className="text-gray-700 text-lg leading-relaxed text-justify">
               The Centre will serve as a hub for interdisciplinary research, innovation, and action on climate change and sustainability. Bringing together expertise from the natural sciences, social sciences, humanities, policy, business, and technology, the Centre will generate knowledge and solutions that address urgent sustainability challenges of local importance while contributing to broader international thought and practice. A defining focus of the Centre will be to strengthen climate research, risk assessment, adaptation planning, resource management, and public engagement, supported by responsible use of artificial intelligence and emerging technologies.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-12 text-center text-4xl">Our Impacts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {impactsData.map((impact, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div className="h-2 w-full bg-[#0d3862] group-hover:bg-blue-500 transition-colors duration-300"></div>
+                <div className="p-8 flex-grow flex flex-col">
+                  <h3 className="text-2xl font-semibold text-[#0d3862] mb-3 leading-tight">{impact.title}</h3>
+                  <p className="text-sm font-medium text-gray-500 mb-6 uppercase tracking-wide">By {impact.author}</p>
+                  <div className="text-gray-700 leading-relaxed text-justify space-y-4 flex-grow">
+                    {impact.content.map((paragraph, pIndex) => (
+                      <p key={pIndex}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

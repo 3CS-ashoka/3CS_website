@@ -7,7 +7,7 @@ interface HeroBannerProps {
   overlayOpacity?: number;
 }
 
-export function HeroBanner({ images, children, className = "py-24", overlayOpacity = 0.35 }: HeroBannerProps) {
+export function HeroBanner({ images, children, className = "py-24", overlayOpacity = 1 }: HeroBannerProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
