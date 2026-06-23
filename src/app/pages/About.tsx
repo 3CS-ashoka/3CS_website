@@ -1,3 +1,4 @@
+import { useState } from "react";
 import imrozeKhan from "../../imports/Image_1.jfif";
 import shivaniKrishna from "../../imports/Image_2.jpg";
 import gauravGarg from "../../imports/Image_3.jpg";
@@ -64,6 +65,94 @@ const impactsData = [
   }
 ];
 
+function ImpactSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(impactsData.length / itemsPerPage);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const startIdx = currentIndex * itemsPerPage;
+  const visibleItems = impactsData.slice(startIdx, startIdx + itemsPerPage);
+
+  return (
+    <div>
+      {/* Cards row */}
+      <div className="relative overflow-hidden">
+        <div
+          className="flex gap-6 transition-all duration-500 ease-in-out"
+          style={{ minHeight: '420px' }}
+        >
+          {visibleItems.map((impact, index) => (
+            <div
+              key={`${currentIndex}-${index}`}
+              className="flex-1 bg-white/95 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-2xl flex flex-col transition-all duration-500 opacity-100 animate-fadeIn"
+            >
+              <div className="h-1.5 w-full bg-gradient-to-r from-[#0d3862] to-blue-400" />
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-xl font-semibold text-[#0d3862] mb-2 leading-tight">{impact.title}</h3>
+                <p className="text-xs font-medium text-gray-500 mb-4 uppercase tracking-wide">By {impact.author}</p>
+                <div className="text-gray-700 leading-relaxed text-justify space-y-3 flex-grow text-sm overflow-y-auto">
+                  {impact.content.map((paragraph, pIndex) => (
+                    <p key={pIndex}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* Fill empty slots if last page has fewer than 3 */}
+          {visibleItems.length < itemsPerPage && Array.from({ length: itemsPerPage - visibleItems.length }).map((_, i) => (
+            <div key={`empty-${i}`} className="flex-1 opacity-0 pointer-events-none" />
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-center gap-6 mt-8">
+        <button
+          onClick={prevSlide}
+          className="w-12 h-12 bg-white text-[#0d3862] rounded-full flex items-center justify-center hover:bg-[#0d3862] hover:text-white transition-all shadow-lg hover:scale-110"
+          aria-label="Previous impacts"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Dot indicators */}
+        <div className="flex gap-2">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-3 rounded-full transition-all ${
+                idx === currentIndex ? 'bg-white w-8' : 'bg-white/40 w-3'
+              }`}
+              aria-label={`Go to page ${idx + 1}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={nextSlide}
+          className="w-12 h-12 bg-white text-[#0d3862] rounded-full flex items-center justify-center hover:bg-[#0d3862] hover:text-white transition-all shadow-lg hover:scale-110"
+          aria-label="Next impacts"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function About() {
   return (
     <div>
@@ -95,25 +184,22 @@ export function About() {
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center text-4xl">Our Impacts</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {impactsData.map((impact, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
-                <div className="h-2 w-full bg-[#0d3862] group-hover:bg-blue-500 transition-colors duration-300"></div>
-                <div className="p-8 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-semibold text-[#0d3862] mb-3 leading-tight">{impact.title}</h3>
-                  <p className="text-sm font-medium text-gray-500 mb-6 uppercase tracking-wide">By {impact.author}</p>
-                  <div className="text-gray-700 leading-relaxed text-justify space-y-4 flex-grow">
-                    {impact.content.map((paragraph, pIndex) => (
-                      <p key={pIndex}>{paragraph}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section
+        className="py-16 relative"
+        style={{
+          backgroundImage: "url('/images/photos/our-impact/1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-[#0d2238]/75 z-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="mb-12 text-center text-4xl text-white">Our Impacts</h2>
+
+          {/* Slider */}
+          <ImpactSlider />
         </div>
       </section>
 

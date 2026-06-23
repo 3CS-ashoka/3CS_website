@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router";
-import logo from "../../imports/3cs_(1)-1.png";
 
 export function Layout() {
   const location = useLocation();
@@ -32,7 +31,7 @@ export function Layout() {
           <div className="flex items-center justify-between h-24">
             <Link to="/" className="flex items-center">
               <img
-                src={logo}
+                src="/images/photos/logo/3cs_logo.png"
                 alt="Centre for Climate Change and Sustainability"
                 className="h-20 w-auto"
               />

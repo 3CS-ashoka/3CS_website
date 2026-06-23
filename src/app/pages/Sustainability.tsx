@@ -164,13 +164,14 @@ export function Sustainability() {
   ];
 
   const latestReports = [
+    { title: "EHS and Sustainability Report 2025", url: "https://www.ashoka.edu.in/wp-content/uploads/2026/06/AU-Sustanability-Report-2025.pdf" },
     { title: "SDG Report 2025", url: "https://www.ashoka.edu.in/wp-content/uploads/2025/10/Annual-SDG-Report_2025.pdf" },
-    { title: "Environment Sustainability Report 2024", url: "https://www.ashoka.edu.in/wp-content/uploads/2025/10/AU-Sustanability-Report-2024.pdf" },
     { title: "Biodiversity Report", url: "https://www.ashoka.edu.in/wp-content/uploads/2023/12/Fauna-in-and-around-Ashoka-University.pdf" },
     { title: "Inclusion, Diversity and Belonging Report 2023-24", url: "https://www.ashoka.edu.in/wp-content/uploads/2024/07/Inclusion-Diversity-and-Belonging-Report-2023-24.pdf" }
   ];
 
   const previousReports = [
+    { title: "Environment Sustainability Report 2024", url: "https://www.ashoka.edu.in/wp-content/uploads/2025/10/AU-Sustanability-Report-2024.pdf" },
     { title: "Annual SDG Report 2023", url: "https://www.ashoka.edu.in/wp-content/uploads/2024/11/Ashoka-SDG-Report-2023-SDG-1-3-4-5-6-7-9-V2.pdf" },
     { title: "Annual SDG Report 2021", url: "https://www.ashoka.edu.in/wp-content/uploads/2024/11/Ashoka-SDG-Report-2021.pdf" },
     { title: "Environment Sustainability Report 2023", url: "https://www.ashoka.edu.in/wp-content/uploads/2024/05/AU-Sustanability-Report-2023.pdf" },
@@ -189,7 +190,6 @@ export function Sustainability() {
   return (
     <div>
       <HeroBanner images={[
-        '/images/photos/sustainability/IMG_0036.JPG',
         '/images/photos/sustainability/IMG_0049.JPG',
         '/images/photos/sustainability/IMG_1888.jpeg',
         '/images/photos/sustainability/IMG_3424.JPG'
@@ -212,6 +212,18 @@ export function Sustainability() {
           <p className="text-gray-700 text-lg mb-16 leading-relaxed text-justify">
             We not only focus on preparing the students for a promising social and professional future but also want to imbibe in our students, faculty and staff the moral responsibility towards a sustainable environment. We at Ashoka believe in contributing to environment sustainability along with institutional growth. At Ashoka University, we are dedicated to creating a sustainable and eco-friendly campus that not only fosters academic excellence but also prioritizes environmental responsibility. Our commitment to sustainability is evident through a range of initiatives that contribute to a greener and healthier future.
           </p>
+
+          {/* Video Section */}
+          <div className="mb-16">
+            <video
+              controls
+              className="w-full rounded-2xl shadow-2xl"
+              style={{ maxHeight: '520px', objectFit: 'cover' }}
+            >
+              <source src="/video/My Movie 26.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
           <h2 className="mb-16 text-5xl text-center">Our Sustainability Initiatives</h2>
 
@@ -315,9 +327,8 @@ export function Sustainability() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-[#0d3862] w-8' : 'bg-gray-300 w-3'
-                }`}
+                className={`h-3 rounded-full transition-all ${index === currentIndex ? 'bg-[#0d3862] w-8' : 'bg-gray-300 w-3'
+                  }`}
                 aria-label={`Go to initiative ${index + 1}`}
               />
             ))}
