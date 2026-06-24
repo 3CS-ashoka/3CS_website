@@ -12,6 +12,9 @@ import solarEnergy from "../../imports/Empowering_Campus_Life_with_Solar_Energy.
 import organicGarden from "../../imports/Organic_Kitchen_Gardens.jpg";
 import climateFellowship from "../../imports/Ashoka_Environmental_Defense_Fund_Climate_Corps_Fellowship.png";
 
+// 🎬 Paste your YouTube video URL here (full URL or embed URL)
+const YOUTUBE_VIDEO_URL = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
+
 export function Sustainability() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPreviousReportsOpen, setIsPreviousReportsOpen] = useState(false);
@@ -215,14 +218,16 @@ export function Sustainability() {
 
           {/* Video Section */}
           <div className="mb-16">
-            <video
-              controls
-              className="w-full rounded-2xl shadow-2xl"
-              style={{ maxHeight: '520px', objectFit: 'cover' }}
-            >
-              <source src="/video/My Movie 26.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="relative w-full rounded-2xl shadow-2xl overflow-hidden" style={{ paddingTop: '56.25%' }}>
+              <iframe
+                src={YOUTUBE_VIDEO_URL}
+                title="Sustainability at Ashoka University"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 'none' }}
+              />
+            </div>
           </div>
 
           <h2 className="mb-16 text-5xl text-center">Our Sustainability Initiatives</h2>
