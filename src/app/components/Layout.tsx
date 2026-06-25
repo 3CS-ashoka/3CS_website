@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Outlet, Link, useLocation } from "react-router";
+import { Outlet, Link, useLocation, ScrollRestoration } from "react-router";
 
 export function Layout() {
   const location = useLocation();
@@ -7,7 +7,20 @@ export function Layout() {
   const [isResearchDropdownOpen, setIsResearchDropdownOpen] = useState(false);
 
   useEffect(() => {
+    // Disable browser's native scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
+    // Force scroll to top on every route change
     window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    // Also scroll the #root element in case it's the scroll container
+    const root = document.getElementById('root');
+    if (root) root.scrollTop = 0;
   }, [location.pathname]);
 
   const navLinks = [
@@ -26,12 +39,13 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollRestoration />
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             <Link to="/" className="flex items-center">
               <img
-                src="/images/photos/logo/3cs_logo.png"
+                src={location.pathname === "/sustainability" ? "/images/photos/logo/3cs_logo.png" : "/images/photos/logo/3cs.png"}
                 alt="Centre for Climate Change and Sustainability"
                 className="h-20 w-auto"
               />
