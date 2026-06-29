@@ -283,7 +283,7 @@ export function About() {
             </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={150}>
+            <ScrollReveal delay={75}>
             <div className="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#0d3862] rounded-lg flex items-center justify-center">
@@ -299,7 +299,7 @@ export function About() {
             </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={300}>
+            <ScrollReveal delay={150}>
             <div className="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-8">
                 <div className="flex-shrink-0 w-16 h-16 bg-[#0d3862] rounded-lg flex items-center justify-center">

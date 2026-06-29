@@ -101,7 +101,7 @@ export function Home() {
         </div>
       </section>
 
-      <HeroBanner images={['/images/photos/upcoming-events/_MG_9650.JPG']} className="py-24">
+      <HeroBanner images={['/images/photos/Upcoming Events/_MG_9650.jpg']} className="py-24">
         <div className="text-center mb-16">
           <h2 className="mb-6 text-4xl">Upcoming Events</h2>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">

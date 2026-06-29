@@ -15,7 +15,7 @@ export function Education() {
 
   return (
     <div>
-      <HeroBanner images={['/images/photos/initiatives/PXL_20250612_113820874.PORTRAIT.ORIGINAL.jpg']} className="py-16">
+      <HeroBanner images={['/images/photos/initiatives/PXL_20250612_113820874.PORTRAIT.ORIGINAL.jpg', '/images/photos/initiatives/IMG.jpg']} className="py-16">
         <div className="max-w-3xl">
           <h1 className="mb-6 text-5xl font-bold drop-shadow-md">Education & Training</h1>
           <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">

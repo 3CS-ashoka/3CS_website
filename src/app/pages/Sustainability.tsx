@@ -13,7 +13,7 @@ import organicGarden from "../../imports/Organic_Kitchen_Gardens.jpg";
 import climateFellowship from "../../imports/Ashoka_Environmental_Defense_Fund_Climate_Corps_Fellowship.png";
 
 // 🎬 Paste your YouTube video URL here (full URL or embed URL)
-const YOUTUBE_VIDEO_URL = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
+const YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v=M0GsoP_MtVY";
 
 export function Sustainability() {
   const [currentIndex, setCurrentIndex] = useState(0);

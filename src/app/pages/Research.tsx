@@ -101,7 +101,7 @@ export function Research() {
 
           <div className="grid grid-cols-1 gap-8">
             {researchVerticals.map((vertical, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
+              <ScrollReveal key={index} delay={index * 50}>
                 <a href={vertical.link} className="group bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-[#0d3862] hover:shadow-lg transition-all duration-300 block">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-16 h-16 bg-[#0d3862] rounded-lg flex items-center justify-center transition-all">
