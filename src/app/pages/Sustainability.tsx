@@ -12,8 +12,15 @@ import solarEnergy from "../../imports/Empowering_Campus_Life_with_Solar_Energy.
 import organicGarden from "../../imports/Organic_Kitchen_Gardens.jpg";
 import climateFellowship from "../../imports/Ashoka_Environmental_Defense_Fund_Climate_Corps_Fellowship.png";
 
-// 🎬 Paste your YouTube video URL here (full URL or embed URL)
+// 🎬 Paste your YouTube video URL here (watch URL or embed URL both work)
 const YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v=M0GsoP_MtVY";
+
+// Converts any YouTube URL to embed format for iframes
+function toYouTubeEmbedUrl(url: string): string {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+}
+
 
 export function Sustainability() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -217,10 +224,10 @@ export function Sustainability() {
           </p>
 
           {/* Video Section */}
-          <div className="mb-16">
+          <div className="mb-16 max-w-4xl mx-auto">
             <div className="relative w-full rounded-2xl shadow-2xl overflow-hidden" style={{ paddingTop: '56.25%' }}>
               <iframe
-                src={YOUTUBE_VIDEO_URL}
+                src={toYouTubeEmbedUrl(YOUTUBE_VIDEO_URL)}
                 title="Sustainability at Ashoka University"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
