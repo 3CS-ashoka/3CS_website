@@ -4,19 +4,19 @@ export function SDGExpo() {
   return (
     <div>
       <HeroBanner images={[
-        '/images/photos/sdg-expo/IMG_8767.JPG',
-        '/images/photos/sdg-expo/IMG_8790.JPG',
-        '/images/photos/sdg-expo/IMG_8811.JPG',
-        '/images/photos/sdg-expo/IMG_8831.JPG',
-        '/images/photos/sdg-expo/IMG_9173.JPG',
-        '/images/photos/sdg-expo/IMG_9370.JPG',
-        '/images/photos/sdg-expo/IMG_9401.JPG',
-        '/images/photos/sdg-expo/IMG_9448.JPG',
-        '/images/photos/sdg-expo/_MG_9522.JPG',
-        '/images/photos/sdg-expo/_MG_9551.JPG',
-        '/images/photos/sdg-expo/_MG_9650.JPG',
-        '/images/photos/sdg-expo/_MG_9679.JPG'
-      ]} className="py-24">
+        '/images/photos/sdg-expo/1.JPG',
+        '/images/photos/sdg-expo/2.JPG',
+        '/images/photos/sdg-expo/3.JPG',
+        '/images/photos/sdg-expo/4.JPG',
+        '/images/photos/sdg-expo/5.JPG',
+        '/images/photos/sdg-expo/6.JPG',
+        '/images/photos/sdg-expo/7.JPG',
+        '/images/photos/sdg-expo/8.JPG',
+        '/images/photos/sdg-expo/9.JPG',
+        '/images/photos/sdg-expo/10.JPG',
+        '/images/photos/sdg-expo/11.JPG',
+        '/images/photos/sdg-expo/12.JPG'
+      ]} className="py-32 md:py-48 lg:py-56">
         <div className="max-w-3xl">
           <h1 className="mb-6 text-5xl font-bold drop-shadow-md">SDG Expo at Ashoka University</h1>
           <p className="text-2xl text-gray-100 leading-relaxed drop-shadow-md">
