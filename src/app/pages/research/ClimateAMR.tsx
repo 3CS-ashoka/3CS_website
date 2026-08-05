@@ -1,3 +1,5 @@
+import { HeroBanner } from "../../components/HeroBanner";
+
 export function ClimateAMR() {
   const ongoingProjects = [
     {
@@ -19,14 +21,16 @@ export function ClimateAMR() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Climate Change and Environmental Antimicrobial Resistance</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
-            Understanding how climate change influences antimicrobial resistance in soil and water systems
-          </p>
-        </div>
-      </section>
+      <HeroBanner
+        images={['/images/photos/research/headers/3.jpg']}
+        overlayOpacity={0.85}
+        scrimClassName="bg-gradient-to-r from-[#0a2238]/65 via-[#0a2238]/45 to-[#0a2238]/20"
+      >
+        <h1 className="mb-6 text-5xl drop-shadow-md">Climate Change & Rising Antimicrobial Resistance</h1>
+        <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed drop-shadow-md">
+          Understanding how climate change influences antimicrobial resistance in soil and water systems
+        </p>
+      </HeroBanner>
 
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

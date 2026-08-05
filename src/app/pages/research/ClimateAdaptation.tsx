@@ -1,3 +1,5 @@
+import { HeroBanner } from "../../components/HeroBanner";
+
 export function ClimateAdaptation() {
   const ongoingProjects = [
     {
@@ -31,14 +33,16 @@ export function ClimateAdaptation() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Climate Adaptation, Biodiversity and Resilience</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
-            Ecosystem restoration for climate resilience through biodiversity monitoring and ecological research
-          </p>
-        </div>
-      </section>
+      <HeroBanner
+        images={['/images/photos/research/headers/2.jpg']}
+        overlayOpacity={0.85}
+        scrimClassName="bg-gradient-to-r from-[#0a2238]/65 via-[#0a2238]/45 to-[#0a2238]/20"
+      >
+        <h1 className="mb-6 text-5xl drop-shadow-md">Climate Adaptation, Biodiversity & Resilience</h1>
+        <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed drop-shadow-md">
+          Ecosystem restoration for climate resilience through biodiversity monitoring and ecological research
+        </p>
+      </HeroBanner>
 
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

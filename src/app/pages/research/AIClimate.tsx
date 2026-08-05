@@ -1,3 +1,5 @@
+import { HeroBanner } from "../../components/HeroBanner";
+
 export function AIClimate() {
   const ongoingProjects = [
     {
@@ -19,14 +21,16 @@ export function AIClimate() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">AI for Climate Tech and Sustainability</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
-            Pioneering rigorous monitoring, reporting, and verification systems for climate and nature metrics
-          </p>
-        </div>
-      </section>
+      <HeroBanner
+        images={['/images/photos/research/headers/4.jpg']}
+        overlayOpacity={0.85}
+        scrimClassName="bg-gradient-to-r from-[#0a2238]/65 via-[#0a2238]/45 to-[#0a2238]/20"
+      >
+        <h1 className="mb-6 text-5xl drop-shadow-md">AI in Climate Tech & Sustainability</h1>
+        <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed drop-shadow-md">
+          Pioneering rigorous monitoring, reporting, and verification systems for climate and nature metrics
+        </p>
+      </HeroBanner>
 
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

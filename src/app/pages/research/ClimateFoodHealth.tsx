@@ -1,3 +1,5 @@
+import { HeroBanner } from "../../components/HeroBanner";
+
 export function ClimateFoodHealth() {
   const ongoingProjects = [
     {
@@ -27,14 +29,16 @@ export function ClimateFoodHealth() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-[#0d3862] via-[#1a5280] to-[#0d3862] text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-5xl">Climate, Food Systems, and Public Health</h1>
-          <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed">
-            Examining how climate change is reshaping food systems, nutrition, disease patterns, and livelihoods
-          </p>
-        </div>
-      </section>
+      <HeroBanner
+        images={['/images/photos/research/headers/1.jpg']}
+        overlayOpacity={0.85}
+        scrimClassName="bg-gradient-to-r from-[#0a2238]/65 via-[#0a2238]/45 to-[#0a2238]/20"
+      >
+        <h1 className="mb-6 text-5xl drop-shadow-md">Climate, Food Systems & Health</h1>
+        <p className="text-2xl text-gray-100 max-w-3xl leading-relaxed drop-shadow-md">
+          Examining how climate change is reshaping food systems, nutrition, disease patterns, and livelihoods
+        </p>
+      </HeroBanner>
 
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

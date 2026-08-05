@@ -5,9 +5,16 @@ interface HeroBannerProps {
   children: React.ReactNode;
   className?: string;
   overlayOpacity?: number;
+  scrimClassName?: string;
 }
 
-export function HeroBanner({ images, children, className = "py-24", overlayOpacity = 1 }: HeroBannerProps) {
+export function HeroBanner({
+  images,
+  children,
+  className = "py-24",
+  overlayOpacity = 1,
+  scrimClassName = "bg-gradient-to-r from-black/60 via-black/40 to-transparent",
+}: HeroBannerProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -32,7 +39,7 @@ export function HeroBanner({ images, children, className = "py-24", overlayOpaci
               }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+          <div className={`absolute inset-0 ${scrimClassName}`} />
         </div>
       )}
 

@@ -23,6 +23,9 @@ const getSpeakerPhoto = (name: string) => {
   if (name.includes("Argha Manna")) return "/images/photos/speaker_photos/argha.png";
   if (name.includes("Shreekant Gupta")) return "/images/photos/speaker_photos/shreekant gupta (for Ashoka).jpg";
   if (name.includes("Sparsh Agarwal")) return "/images/photos/speaker_photos/Headshot_Sparsh.jpeg";
+  if (name.includes("Shivani Krishna")) return "/images/photos/speaker_photos/Shivani Krishna.png";
+  if (name.includes("Imroze Khan")) return "/images/photos/speaker_photos/Imroze Khan.png";
+  if (name.includes("Gaurav Garg") || name.includes("Gaurav C. Garg")) return "/images/photos/speaker_photos/Gaurav Garg.png";
   if (name.includes("Krishna Gupta")) return "/images/photos/speaker_photos/Krishna Gupta.jpg";
   return undefined;
 };
@@ -106,15 +109,33 @@ export function HealingEarthWorkshop() {
 
             {/* Speaker column */}
             <div className="px-4 py-5 border-l border-gray-100 flex items-start">
-              {hasProfile ? (
+              {"Speakers" in item && Array.isArray(item.Speakers) && item.Speakers.length > 0 ? (
+                <div className="flex flex-col gap-3">
+                  {item.Speakers.map((speaker, speakerIndex) =>
+                    speaker.profile ? (
+                      <button
+                        key={speakerIndex}
+                        onClick={() => openModal(speaker.name, speaker.profile, getSpeakerPhoto(speaker.name))}
+                        className="text-[#0d3862] font-medium text-sm text-left leading-snug hover:underline underline-offset-2 decoration-[#0d3862]/40 transition-colors"
+                      >
+                        {speaker.name}
+                      </button>
+                    ) : (
+                      <span key={speakerIndex} className="text-gray-600 text-sm leading-snug">
+                        {speaker.name}
+                      </span>
+                    )
+                  )}
+                </div>
+              ) : hasProfile ? (
                 <button
                   onClick={() => openModal(speakerStr || "", item["Profile of the Speaker"]!, getSpeakerPhoto(speakerStr || ""))}
-                  className="text-[#0d3862] font-medium text-sm text-left leading-snug hover:underline underline-offset-2 decoration-[#0d3862]/40 transition-colors"
+                  className="text-[#0d3862] font-medium text-sm text-left leading-snug hover:underline underline-offset-2 decoration-[#0d3862]/40 transition-colors whitespace-pre-line"
                 >
                   {speakerStr}
                 </button>
               ) : (
-                <span className="text-gray-600 text-sm leading-snug">{speakerStr}</span>
+                <span className="text-gray-600 text-sm leading-snug whitespace-pre-line">{speakerStr}</span>
               )}
             </div>
           </div>
@@ -135,13 +156,11 @@ export function HealingEarthWorkshop() {
         {/* Background image strip */}
         <div className="absolute inset-0 pointer-events-none">
           <div
-            className="absolute right-0 top-0 h-full w-[45%] opacity-25"
+            className="absolute inset-0 opacity-35"
             style={{
               backgroundImage: `url(${heroImages[0]})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
             }}
           />
         </div>
@@ -216,7 +235,7 @@ export function HealingEarthWorkshop() {
                 Add to Google Calendar
               </a>
               <a
-                href="https://drive.google.com/file/d/1MSljWEcg5aNcRgTFIQL7nIpirdXBboY_/view"
+                href="https://drive.google.com/file/d/1Pb3z8FHvjqHcxKjYZohuigrQS8YGmYcV/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all"
@@ -227,9 +246,25 @@ export function HealingEarthWorkshop() {
                 </svg>
                 View Conference Flyer
               </a>
+              <a
+                href="https://drive.google.com/file/d/1clY9SWE9PtBLcUdR3zjg6xC2KnK-ohm6/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                View Conference Brochure
+              </a>
             </div>
           </div>
         </div>
+
+        <p className="absolute bottom-1 right-1 text-[11px] text-white/50 tracking-wide pointer-events-none">
+          Photo credit: Dipendra Nath Basu
+        </p>
       </section>
 
       {/* ── About ─────────────────────────────────────────── */}
@@ -240,7 +275,10 @@ export function HealingEarthWorkshop() {
             <div>
               <h2 className="text-3xl font-bold text-[#0d3862] mb-4">About the Workshop</h2>
               <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                The Healing Earth workshop is a flagship annual workshop organised by the Centre for Climate Change and Sustainability (3CS) to facilitate conversations around the effects of the climate crisis and its wider impact on our world today. Launched in 2021, the workshop aims to bring together researchers, practitioners, and faculty to explore the links, trade-offs, and tensions at the nexus of climate change, health, and ecosystems.
+                The Healing Earth workshop series is designed to catalyse action on issues pertaining to climate change and sustainability by advancing policy engagement; building strategic partnerships among policymakers, practitioners, academics, and students; and promoting the adoption of scalable climate solutions. The 3CS plans to host such workshops on a biannual basis.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed text-justify mt-4">
+                This inaugural workshop will focus on two keys areas, Science, and Policy &amp; Governance aspects of climate change.
               </p>
             </div>
           </div>
@@ -269,24 +307,11 @@ export function HealingEarthWorkshop() {
 
             {/* Content */}
             <div className="px-8 pb-8">
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-gray-50 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
-                  <div className="space-y-3 text-gray-600 text-sm leading-relaxed">
-                    <p>
-                      Climate change is one of the most urgent scientific and societal challenges of our time, and understanding it begins with the science. This workshop is designed to give participants an accessible, research-grounded introduction to Earth's climate system.
-                    </p>
-                    <p>
-                      Spanning four thematic sessions, the programme takes participants on a journey from the fundamental physics of Earth's energy balance, through deep-time evidence of glacial and interglacial cycles to modern anthropogenic disruption.
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">Who Can Attend</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    The workshop is open to everyone — no prior background required. It will be especially valuable for undergraduate or postgraduate students from any discipline, science educators, policy professionals, and science communicators working on climate and environmental issues.
-                  </p>
-                </div>
+              <div className="bg-gray-50 rounded-xl p-5 mb-8">
+                <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                  This workshop will centre on Earth’s climate systems with special emphasis on climate science, biodiversity, adaptation, and communication. It will give participants an accessible, research-grounded introduction from leading scholars and practitioners to how the climate has evolved, how human activities are reshaping it, and how different approaches can address the resulting impacts on ecosystems and communities.
+                </p>
               </div>
 
               <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-1 flex items-center gap-2">
@@ -317,25 +342,11 @@ export function HealingEarthWorkshop() {
 
             {/* Content */}
             <div className="px-8 pb-8">
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-gray-50 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    This workshop will center on policy and governance in the age of climate change with a special emphasis on fostering micro-adaptations and micro-solutions, led by leading policymakers in India.
-                  </p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">Objective</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Exchange of ideas; inspiring young minds; foster meaningful policy oriented research collaborations that 3CS can host.
-                  </p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-5">
-                  <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">Who Can Attend</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Open to all — especially valuable for students from any discipline, journalists, environmental change communicators, and policy professionals.
-                  </p>
-                </div>
+              <div className="bg-gray-50 rounded-xl p-5 mb-8">
+                <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
+                <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                  This workshop will give participants an accessible introduction by some of the leading policymakers, innovators, and scholars of India on how policy can help us adapt to and mitigate the harmful effects of climate change, and how it can help foster meaningful synergies between government, industry, society, and science.
+                </p>
               </div>
 
               <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-1 flex items-center gap-2">

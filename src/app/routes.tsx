@@ -15,7 +15,6 @@ import { ClimateAMR } from "./pages/research/ClimateAMR";
 import { AIClimate } from "./pages/research/AIClimate";
 import { EHUSS } from "./pages/research/EHUSS";
 import { ClimatePolicy } from "./pages/research/ClimatePolicy";
-import { EnergyMobility } from "./pages/research/EnergyMobility";
 import { HealingEarthWorkshop } from "./pages/HealingEarthWorkshop";
 
 export const router = createBrowserRouter([
@@ -32,7 +31,6 @@ export const router = createBrowserRouter([
       { path: "research/ai-climate", Component: AIClimate },
       { path: "research/ehuss", Component: EHUSS },
       { path: "research/climate-policy", Component: ClimatePolicy },
-      { path: "research/energy-mobility", Component: EnergyMobility },
       { path: "people", Component: People },
       { path: "publications", Component: Publications },
       { path: "innovation", Component: Innovation },
