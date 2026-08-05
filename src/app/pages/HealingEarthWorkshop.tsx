@@ -276,10 +276,10 @@ export function HealingEarthWorkshop() {
             <div>
               <h2 className="text-3xl font-bold text-[#0d3862] mb-4">About the Workshop</h2>
               <p className="text-gray-600 text-lg leading-relaxed text-justify">
-                The Healing Earth workshop series is designed to catalyse action on issues pertaining to climate change and sustainability by advancing policy engagement; building strategic partnerships among policymakers, practitioners, academics, and students; and promoting the adoption of scalable climate solutions. The 3CS plans to host such workshops on a biannual basis.
+                The Healing Earth workshop series is designed to catalyse action on issues pertaining to climate change and sustainability by advancing policy engagement; building strategic partnerships among policymakers, practitioners, academics, and students; and promoting the adoption of scalable climate solutions.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed text-justify mt-4">
-                This inaugural workshop will focus on two keys areas, Science, and Policy &amp; Governance aspects of climate change.
+                This inaugural workshop will focus on the Science, and Policy &amp; Governance aspects of climate change.
               </p>
             </div>
           </div>

@@ -103,7 +103,7 @@ export const healingEarthSchedule = [
     "Time": "10:15 am – 10:45 am",
     " Title of the Talk": "State of play on Govt policy on climate generally and negotiations",
     "Speaker Name": "Dr Anshu Bhardwaj, Programme Director, Energy, Green Transition & Climate Change, NITI Aayog",
-    "Profile of the Speaker": "Dr Anshu Bhardwaj is the Programme Director for Energy, Green Transition & Climate Change at NITI Aayog, Government of India. She leads policy research and strategic initiatives aimed at advancing India's clean energy transition and climate commitments under international frameworks including the Paris Agreement."
+    "Profile of the Speaker": "Dr Anshu Bhardwaj is the Programme Director for Energy, Green Transition & Climate Change at NITI Aayog, Government of India."
   },
   {
     "Day": "Day 2",
