@@ -72,9 +72,9 @@ export function HealingEarthWorkshop() {
           return (
             <div
               key={index}
-              className="flex items-center gap-4 px-6 py-3 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-100"
+              className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-3 md:px-6 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-100"
             >
-              <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest w-36 shrink-0">{item.Time}</span>
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest md:w-36 md:shrink-0">{item.Time}</span>
               <span className="flex items-center gap-2 text-gray-500 text-sm font-medium">
                 {rowType === "lunch" ? "🍽️" : "☕"} {titleStr}
               </span>
@@ -85,20 +85,21 @@ export function HealingEarthWorkshop() {
         return (
           <div
             key={index}
-            className="group grid grid-cols-[8rem_1fr_1fr] gap-0 border-b border-gray-100 last:border-b-0 hover:bg-blue-50/40 transition-colors duration-150"
-            style={{ gridTemplateColumns: "8.5rem 1fr 1fr" }}
+            className="group flex flex-col gap-1.5 px-4 py-4 border-b border-gray-100 last:border-b-0 hover:bg-blue-50/40 transition-colors duration-150 md:grid md:grid-cols-[8.5rem_1fr_1fr] md:gap-0 md:p-0"
           >
             {/* Time column */}
-            <div className="px-5 py-5 flex items-start">
-              <span className="text-xs font-semibold text-[#0d3862]/60 leading-snug pt-0.5">{item.Time}</span>
+            <div className="md:px-5 md:py-5 md:flex md:items-start">
+              <span className="text-xs font-semibold text-[#0d3862]/60 uppercase tracking-wide leading-snug md:normal-case md:tracking-normal md:pt-0.5">
+                {item.Time}
+              </span>
             </div>
 
             {/* Title column */}
-            <div className="px-4 py-5 border-l border-gray-100 flex items-start">
+            <div className="md:px-4 md:py-5 md:border-l md:border-gray-100 md:flex md:items-start">
               {hasAbstract ? (
                 <button
                   onClick={() => openModal(titleStr || "", item.Abstract!)}
-                  className="text-[#0d3862] font-semibold text-sm text-left leading-snug hover:text-[#1a6bb5] transition-colors group-hover:underline underline-offset-2 decoration-[#0d3862]/30"
+                  className="w-full text-[#0d3862] font-semibold text-sm text-left leading-snug py-1.5 md:py-0 underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid hover:text-[#1a6bb5] transition-colors"
                 >
                   {titleStr}
                 </button>
@@ -108,15 +109,15 @@ export function HealingEarthWorkshop() {
             </div>
 
             {/* Speaker column */}
-            <div className="px-4 py-5 border-l border-gray-100 flex items-start">
+            <div className="md:px-4 md:py-5 md:border-l md:border-gray-100 md:flex md:items-start">
               {"Speakers" in item && Array.isArray(item.Speakers) && item.Speakers.length > 0 ? (
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2 md:gap-3 w-full">
                   {item.Speakers.map((speaker, speakerIndex) =>
                     speaker.profile ? (
                       <button
                         key={speakerIndex}
                         onClick={() => openModal(speaker.name, speaker.profile, getSpeakerPhoto(speaker.name))}
-                        className="text-[#0d3862] font-medium text-sm text-left leading-snug hover:underline underline-offset-2 decoration-[#0d3862]/40 transition-colors"
+                        className="w-full text-[#0d3862] font-medium text-sm text-left leading-snug py-1.5 md:py-0 underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid transition-colors"
                       >
                         {speaker.name}
                       </button>
@@ -130,7 +131,7 @@ export function HealingEarthWorkshop() {
               ) : hasProfile ? (
                 <button
                   onClick={() => openModal(speakerStr || "", item["Profile of the Speaker"]!, getSpeakerPhoto(speakerStr || ""))}
-                  className="text-[#0d3862] font-medium text-sm text-left leading-snug hover:underline underline-offset-2 decoration-[#0d3862]/40 transition-colors whitespace-pre-line"
+                  className="w-full text-[#0d3862] font-medium text-sm text-left leading-snug py-1.5 md:py-0 underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid transition-colors whitespace-pre-line"
                 >
                   {speakerStr}
                 </button>
@@ -294,11 +295,11 @@ export function HealingEarthWorkshop() {
             {/* Card header */}
             <div className="flex items-center gap-0">
               <div className="w-1.5 self-stretch bg-gradient-to-b from-[#0d3862] to-[#1a6bb5]" />
-              <div className="px-8 py-7 flex-1">
+              <div className="px-5 sm:px-8 py-6 sm:py-7 flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Day 1</span>
-                    <h3 className="text-2xl font-bold text-[#0d3862] mt-2">Workshop 1: The Science of Climate Change</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0d3862] mt-2">Workshop 1: The Science of Climate Change</h3>
                     <p className="text-gray-400 text-sm font-medium mt-1">September 11, 2026</p>
                   </div>
                 </div>
@@ -306,8 +307,8 @@ export function HealingEarthWorkshop() {
             </div>
 
             {/* Content */}
-            <div className="px-8 pb-8">
-              <div className="bg-gray-50 rounded-xl p-5 mb-8">
+            <div className="px-4 sm:px-8 pb-8">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 mb-8">
                 <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
                 <p className="text-gray-600 text-sm leading-relaxed text-justify">
                   This workshop will centre on Earth’s climate systems with special emphasis on climate science, biodiversity, adaptation, and communication. It will give participants an accessible, research-grounded introduction from leading scholars and practitioners to how the climate has evolved, how human activities are reshaping it, and how different approaches can address the resulting impacts on ecosystems and communities.
@@ -319,7 +320,7 @@ export function HealingEarthWorkshop() {
                 Schedule
                 <span className="w-4 h-px bg-[#0d3862]/30" />
               </h4>
-              <p className="text-xs text-gray-400 mb-3">Click a talk title to read the abstract · Click a speaker name to view their profile</p>
+              <p className="text-xs text-gray-400 mb-3">Tap a talk title to read the abstract · Tap a speaker name to view their profile</p>
               {renderScheduleTable(day1Schedule)}
             </div>
           </div>
@@ -329,11 +330,11 @@ export function HealingEarthWorkshop() {
             {/* Card header */}
             <div className="flex items-center gap-0">
               <div className="w-1.5 self-stretch bg-gradient-to-b from-emerald-500 to-teal-600" />
-              <div className="px-8 py-7 flex-1">
+              <div className="px-5 sm:px-8 py-6 sm:py-7 flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-teal-700 bg-teal-50 border border-teal-100 px-2.5 py-1 rounded-full">Day 2</span>
-                    <h3 className="text-2xl font-bold text-[#0d3862] mt-2">Workshop 2: Policy and Governance in the Age of Climate Change</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0d3862] mt-2">Workshop 2: Policy and Governance in the Age of Climate Change</h3>
                     <p className="text-gray-400 text-sm font-medium mt-1">September 12, 2026</p>
                   </div>
                 </div>
@@ -341,8 +342,8 @@ export function HealingEarthWorkshop() {
             </div>
 
             {/* Content */}
-            <div className="px-8 pb-8">
-              <div className="bg-gray-50 rounded-xl p-5 mb-8">
+            <div className="px-4 sm:px-8 pb-8">
+              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 mb-8">
                 <h4 className="text-sm font-bold text-[#0d3862] uppercase tracking-wider mb-3">About</h4>
                 <p className="text-gray-600 text-sm leading-relaxed text-justify">
                   This workshop will give participants an accessible introduction by some of the leading policymakers, innovators, and scholars of India on how policy can help us adapt to and mitigate the harmful effects of climate change, and how it can help foster meaningful synergies between government, industry, society, and science.
@@ -354,7 +355,7 @@ export function HealingEarthWorkshop() {
                 Schedule
                 <span className="w-4 h-px bg-[#0d3862]/30" />
               </h4>
-              <p className="text-xs text-gray-400 mb-3">Click a talk title to read the abstract · Click a speaker name to view their profile</p>
+              <p className="text-xs text-gray-400 mb-3">Tap a talk title to read the abstract · Tap a speaker name to view their profile</p>
               {renderScheduleTable(day2Schedule)}
             </div>
           </div>
