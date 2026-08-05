@@ -12,12 +12,18 @@ interface ModalState {
 const getSpeakerPhoto = (name: string) => {
   if (name.includes("Indra Sekhar Sen")) return "/images/photos/speaker_photos/ Indra Sekhar Sen.jpeg";
   if (name.includes("Aaditeshwar Seth")) return "/images/photos/speaker_photos/Dr. Aaditeshwar Seth.jpg";
-  if (name.includes("Sambuddha Mishr")) return "/images/photos/speaker_photos/Sambuddha Mishra.jpg";
+  if (name.includes("Sambuddha Mishr")) return "/images/photos/speaker_photos/sambuddha.avif";
   if (name.includes("Ghazala Shahabuddin")) return "/images/photos/speaker_photos/Ghazala Shahabuddin.jpg";
   if (name.includes("Gautam Menon")) return "/images/photos/speaker_photos/Gautam Menon.webp";
   if (name.includes("Uday Shankar")) return "/images/photos/speaker_photos/Dr. Uday Shankar.jpg";
   if (name.includes("Sumedha Basu")) return "/images/photos/speaker_photos/Sumedha Basu.webp";
-  if (name.includes("Amita B")) return "/images/photos/speaker_photos/Amita Baviskar.webp";
+  if (name.includes("Amita B")) return "/images/photos/speaker_photos/Amita.JPEG";
+  if (name.includes("Meghna Agarwala")) return "/images/photos/speaker_photos/Meghna.webp";
+  if (name.includes("Anshu Bhardwaj") || name.includes("Anshu Bharadwaj")) return "/images/photos/speaker_photos/anshu-bharadwa (1).jpg";
+  if (name.includes("Argha Manna")) return "/images/photos/speaker_photos/argha.png";
+  if (name.includes("Shreekant Gupta")) return "/images/photos/speaker_photos/shreekant gupta (for Ashoka).jpg";
+  if (name.includes("Sparsh Agarwal")) return "/images/photos/speaker_photos/Headshot_Sparsh.jpeg";
+  if (name.includes("Krishna Gupta")) return "/images/photos/speaker_photos/Krishna Gupta.jpg";
   return undefined;
 };
 
@@ -26,9 +32,13 @@ const getRowType = (title: string) => {
   const t = title.toLowerCase();
   if (t.includes("break") || t.includes("tea") || t.includes("coffee")) return "break";
   if (t.includes("lunch")) return "lunch";
-  if (t.includes("introductory") || t.includes("panel") || t.includes("workshop") || t.includes("art")) return "special";
+  if (t.includes("introductory") || t.includes("panel") || t.includes("workshop") || t.includes("art") || t.includes("communicate")) return "special";
   return "talk";
 };
+
+const heroImages = [
+  "/images/photos/schedule/IMG_1074.jpg",
+];
 
 export function HealingEarthWorkshop() {
   const [modalState, setModalState] = useState<ModalState>({
@@ -122,6 +132,20 @@ export function HealingEarthWorkshop() {
           background: "linear-gradient(135deg, #0a2e52 0%, #0d3862 40%, #10528a 70%, #0d3862 100%)",
         }}
       >
+        {/* Background image strip */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="absolute right-0 top-0 h-full w-[45%] opacity-25"
+            style={{
+              backgroundImage: `url(${heroImages[0]})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
+              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
+            }}
+          />
+        </div>
+
         {/* decorative rings */}
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-white/5 pointer-events-none" />
         <div className="absolute -top-16 -right-16 w-[350px] h-[350px] rounded-full border border-white/8 pointer-events-none" />
@@ -158,9 +182,28 @@ export function HealingEarthWorkshop() {
                   Ashoka University, Sonipat
                 </span>
               </div>
+
+              {/* Registration deadline banner */}
+              <div className="mt-6 inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-lg px-4 py-2 text-sm text-emerald-200">
+                <svg className="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Last Date to Register: <strong className="text-emerald-300">20 August 2026</strong></span>
+              </div>
             </div>
 
             <div className="flex flex-col gap-3 shrink-0">
+              <a
+                href="https://forms.gle/8WuppouCMiagsRGA9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-lg font-bold text-sm transition-all shadow-lg shadow-emerald-900/30"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                Register Now
+              </a>
               <a
                 href="https://calendar.google.com/calendar/r/eventedit?dates=20260911T000000Z/20260913T000000Z&text=The+Healing+Earth+Workshop+Series&location=Ashoka+University&details=Ideas+and+Conversations+on+Climate+Change+and+Sustainability"
                 target="_blank"
