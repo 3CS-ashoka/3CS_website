@@ -3,15 +3,15 @@ export const healingEarthSchedule = [
     "Day": "Day 1",
     "Time": "10:30 am – 10:45 am",
     " Title of the Talk": "Introductory remarks on Climate Change: The Imperative to Act Now Science, Economics, and the Strategic Path Forward for India",
-    "Speaker Name": "Prof Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat\n\nProf Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat",
+    "Speaker Name": "Prof Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat\n\nProf Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat",
     "Speakers": [
-      {
-        "name": "Prof Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat",
-        "profile": "Prof Shivani Krishna is an Assistant Professor of Biology and Faculty Coordinator of Natural Sciences at 3CS, Ashoka University."
-      },
       {
         "name": "Prof Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat",
         "profile": "Prof Imroze Khan is the Director of 3CS and an Associate Professor of Biology at Ashoka University, Sonipat."
+      },
+      {
+        "name": "Prof Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat",
+        "profile": "Prof Shivani Krishna is an Assistant Professor of Biology and Faculty Coordinator of Natural Sciences at 3CS, Ashoka University."
       }
     ]
   },
@@ -56,8 +56,9 @@ export const healingEarthSchedule = [
   {
     "Day": "Day 1",
     "Time": "2:30 pm – 3:00 pm",
-    " Title of the Talk": "Climate change & Infectious disease Modelling",
+    " Title of the Talk": "The uncertain future of climate sensitive diseases",
     "Speaker Name": "Prof Gautam Menon, Professor of Physics and Biology, Ashoka University, Sonipat",
+    "Abstract": "Climate-sensitive diseases are those diseases whose frequency, severity, or geographic spread shift due to weather and climate patterns, e.g. temperature, rain, humidity, and extreme events. Higher warmth and heavy rain expand areas where disease-carrying bacteria and contaminated water thrive. Climate-sensitive diseases include diseases such as malaria, dengue, Zika, and chikungunya, but also gastrointestinal diseases such as cryptosporidiosis, giardiasis and salmonellosis. Planning for climate-sensitive diseases calls for the integration of models for disease spread with changing environmental factors, as well as extrapolations into the future on many fronts. I will discuss both background as well as models that can be used to provide greater understanding as well as early warnings.",
     "Profile of the Speaker": "Gautam Menon is a Professor of Physics and Biology at Ashoka University.\nHe served as Dean (Research) at Ashoka between 2022 and 2025 and was also Director of Ashoka's Centre for Climate Change and Sustainability (3CS) during that period.\nHe is a Commissioner on the Lancet Commission on 'Strengthening the use of Epidemiological Modelling of Pandemic Diseases', a co-author of the 'Lancet Commission on a Citizen-centred Health System for India' and a member of the WHO 'Technical Advisory Group on Embedding Ethics in Health and Climate Change Policy.' He completed a BSc (Hons) in physics at St. Stephen's College, Delhi, an MSc from IIT Kanpur, and a PhD from the Indian Institute of Science, Bangalore. Prior to joining Ashoka, he was a Professor with both the Theoretical Physics and Computational Biology groups at the Institute of Mathematical Sciences (IMSc), Chennai, where he was also the founding Dean of the Computational Biology group. He joined IMSc following post-doctoral research and teaching at the Tata Institute of Fundamental Research in Mumbai and the Simon Fraser University in Vancouver, Canada. He was a Visiting Professor at the Mechanobiology Institute and the Department of Biological Sciences at the National University of Singapore (2011 – 2013). He was an Adjunct Professor at the Tata Institute of Fundamental Research, Mumbai (2019 – 2022). He serves on the scientific review committees of several international and national agencies, including the Human Frontier Science Program and the Wellcome Trust-DBT India Alliance, as well as on a number of national committees. He was a Member of the Expert Group (Education) for the Science, Technology and Innovation Policy of India (2020)."
   },
   {
@@ -86,15 +87,15 @@ export const healingEarthSchedule = [
     "Day": "Day 2",
     "Time": "10:00 am – 10:15 am",
     " Title of the Talk": "Introductory remarks on the Policy and Governance architecture for Climate Policy and Climate Negotiations",
-    "Speaker Name": "Prof Gaurav Garg, Assistant Professor of History, Ashoka University, Sonipat\n\nDr Krishna Gupta, IAS, State Election Commissioner, West Bengal",
+    "Speaker Name": "Dr Krishna Gupta, IAS, State Election Commissioner, West Bengal\n\nProf Gaurav Garg, Assistant Professor of History, Ashoka University, Sonipat",
     "Speakers": [
-      {
-        "name": "Prof Gaurav Garg, Assistant Professor of History, Ashoka University, Sonipat",
-        "profile": "Prof Gaurav C. Garg is an Assistant Professor of History and Faculty Coordinator for Social Sciences & Policy Research at 3CS, Ashoka University, Sonipat."
-      },
       {
         "name": "Dr Krishna Gupta, IAS, State Election Commissioner, West Bengal",
         "profile": "Dr Krishna Gupta, IAS, is the State Election Commissioner of West Bengal and brings extensive experience in public administration and climate governance."
+      },
+      {
+        "name": "Prof Gaurav Garg, Assistant Professor of History, Ashoka University, Sonipat",
+        "profile": "Prof Gaurav C. Garg is an Assistant Professor of History and Faculty Coordinator for Social Sciences & Policy Research at 3CS, Ashoka University, Sonipat."
       }
     ]
   },
