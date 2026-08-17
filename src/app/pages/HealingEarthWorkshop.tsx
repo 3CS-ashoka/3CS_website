@@ -27,6 +27,7 @@ const getSpeakerPhoto = (name: string) => {
   if (name.includes("Imroze Khan")) return "/images/photos/speaker_photos/Imroze Khan.png";
   if (name.includes("Gaurav Garg") || name.includes("Gaurav C. Garg")) return "/images/photos/speaker_photos/Gaurav Garg.png";
   if (name.includes("Krishna Gupta")) return "/images/photos/speaker_photos/Krishna Gupta.jpg";
+  if (name.includes("Sahana Ghosh") || name.includes("Sahaana Ghosh")) return "/images/photos/speaker_photos/Sahana Ghosh.jpg";
   return undefined;
 };
 
@@ -128,6 +129,19 @@ export function HealingEarthWorkshop() {
                     )
                   )}
                 </div>
+              ) : hasProfile && speakerStr?.startsWith("Moderated by ") ? (
+                <p className="text-gray-600 text-sm leading-snug py-1.5 md:py-0">
+                  Moderated by{" "}
+                  <button
+                    onClick={() => {
+                      const linkedName = speakerStr.replace(/^Moderated by /, "");
+                      openModal(linkedName, item["Profile of the Speaker"]!, getSpeakerPhoto(linkedName));
+                    }}
+                    className="inline text-sm font-normal text-[#0d3862] underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid transition-colors"
+                  >
+                    {speakerStr.replace(/^Moderated by /, "")}
+                  </button>
+                </p>
               ) : hasProfile ? (
                 <button
                   onClick={() => openModal(speakerStr || "", item["Profile of the Speaker"]!, getSpeakerPhoto(speakerStr || ""))}

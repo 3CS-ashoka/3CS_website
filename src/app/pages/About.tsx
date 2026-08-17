@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import dipendraNathBasu from "../../imports/Dipendra_Nath_Basu.jpg";
+import saanviMagod from "../../imports/Saanvi_Magod.jpg";
+import devashriAwasthy from "../../imports/Devashri_Awasthy.jpg";
 import imrozeKhan from "../../imports/Image_1.jfif";
 import shivaniKrishna from "../../imports/Image_2.jpg";
 import gauravGarg from "../../imports/Image_3.jpg";
@@ -64,6 +67,144 @@ const impactsData = [
     ]
   }
 ];
+
+const peopleData = [
+  {
+    name: "Imroze Khan",
+    role: "Director, Centre for Climate Change and Sustainability",
+    href: "https://www.ashoka.edu.in/profile/imroze-khan/",
+    image: imrozeKhan,
+    objectPosition: "50% 18%",
+  },
+  {
+    name: "Shivani Krishna",
+    role: "Faculty Coordinator",
+    href: "https://www.ashoka.edu.in/profile/shivani-krishna/",
+    image: shivaniKrishna,
+    objectPosition: "50% 12%",
+  },
+  {
+    name: "Gaurav Garg",
+    role: "Faculty Coordinator",
+    href: "https://www.ashoka.edu.in/profile/gaurav-c-garg/",
+    image: gauravGarg,
+    objectPosition: "50% 12%",
+  },
+  {
+    name: "Rohith Unnikrishnan",
+    role: "Deputy Manager",
+    href: "https://www.linkedin.com/in/unnikrishnanrohith",
+    image: rohithUnnikrishnan,
+    objectPosition: "50% 10%",
+  },
+  {
+    name: "Dipendra Nath Basu",
+    role: "Simons-Ashoka Early Career Fellow",
+    href: "https://www.ashoka.edu.in/profile/dipendra-nath-basu/",
+    image: dipendraNathBasu,
+    objectPosition: "50% 22%",
+  },
+  {
+    name: "Devashri Awasthy",
+    role: "Research Fellow",
+    href: "https://www.linkedin.com/in/devashri-awasthi-aa48901b3/",
+    image: devashriAwasthy,
+    objectPosition: "50% 20%",
+  },
+  {
+    name: "Saanvi Magod",
+    role: "Intern",
+    href: "https://www.linkedin.com/in/saanvi-magod-6584ab27b/",
+    image: saanviMagod,
+    objectPosition: "50% 16%",
+  },
+];
+
+function PeopleCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.matchMedia("(max-width: 639px)").matches) setItemsPerPage(1);
+      else if (window.matchMedia("(max-width: 1023px)").matches) setItemsPerPage(2);
+      else setItemsPerPage(4);
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
+  const totalPages = Math.ceil(peopleData.length / itemsPerPage);
+
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, totalPages - 1));
+  }, [totalPages]);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const startIdx = currentIndex * itemsPerPage;
+  const visiblePeople = peopleData.slice(startIdx, startIdx + itemsPerPage);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-12 sm:h-12 bg-[#0d3862] text-white rounded-full flex items-center justify-center hover:bg-[#1a5280] transition-all shadow-lg hover:scale-110 -translate-x-1 sm:-translate-x-4"
+        aria-label="Previous profiles"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div className="px-8 sm:px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {visiblePeople.map((person) => (
+            <div
+              key={person.name}
+              className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300"
+            >
+              <a href={person.href} target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="w-full h-72 object-cover"
+                  style={{ objectPosition: person.objectPosition }}
+                />
+                <div className="p-6">
+                  <h3 className="text-xl text-[#0d3862] mb-2">{person.name}</h3>
+                  {person.role && (
+                    <p className="text-gray-600 leading-relaxed">{person.role}</p>
+                  )}
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-11 h-11 sm:w-12 sm:h-12 bg-[#0d3862] text-white rounded-full flex items-center justify-center hover:bg-[#1a5280] transition-all shadow-lg hover:scale-110 translate-x-1 sm:translate-x-4"
+        aria-label="Next profiles"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  );
+}
 
 function ImpactSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -207,47 +348,7 @@ export function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl text-center mb-8">People</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-              <a href="https://www.ashoka.edu.in/profile/imroze-khan/" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={imrozeKhan} alt="Imroze Khan" className="w-full h-64 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl text-[#0d3862] mb-2">Imroze Khan</h3>
-                  <p className="text-gray-600 leading-relaxed">Director, Centre for Climate Change and Sustainability</p>
-                </div>
-              </a>
-            </div>
-
-            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-              <a href="https://www.ashoka.edu.in/profile/shivani-krishna/" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={shivaniKrishna} alt="Shivani Krishna" className="w-full h-64 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl text-[#0d3862] mb-2">Shivani Krishna</h3>
-                  <p className="text-gray-600 leading-relaxed">Faculty Coordinator</p>
-                </div>
-              </a>
-            </div>
-
-            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-              <a href="https://www.ashoka.edu.in/profile/gaurav-c-garg/" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={gauravGarg} alt="Gaurav Garg" className="w-full h-64 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl text-[#0d3862] mb-2">Gaurav Garg</h3>
-                  <p className="text-gray-600 leading-relaxed">Faculty Coordinator</p>
-                </div>
-              </a>
-            </div>
-
-            <div className="bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
-              <a href="https://www.linkedin.com/in/unnikrishnanrohith" target="_blank" rel="noopener noreferrer" className="block">
-                <img src={rohithUnnikrishnan} alt="Rohith Unnikrishnan" className="w-full h-64 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl text-[#0d3862] mb-2">Rohith Unnikrishnan</h3>
-                  <p className="text-gray-600 leading-relaxed">Deputy Manager</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          <PeopleCarousel />
         </div>
       </section>
 

@@ -160,8 +160,24 @@ export const healingEarthSchedule = [
   },
   {
     "Day": "Day 2",
-    "Time": "2:30 pm – 3:30 pm",
+    "Time": "2:30 pm – 2:50 pm",
+    " Title of the Talk": "What Do Journalists Need From Climate Scientists?",
+    "Speaker Name": "Sahana Ghosh, Associate Editor, Nature India",
+    "Abstract": "Climate journalism is only as rigorous as the evidence, expertise and access available to journalists. Yet the relationship between scientists and journalists often remains largely transactional—around press releases, paper launches or requests for comments.\n\nThis short session would turn the conversation towards a more fundamental question: What do journalists actually need from scientists to report climate change and climate solutions accurately, critically and meaningfully?",
+    "Profile of the Speaker": "Sahana is an award-winning Indian journalist with an eye on science and the environment. At Nature India, she contributes to editorial strategy and function.\n\nShe is a co-founder and secretary of the Science Journalists Association of India. She co-leads Bay Bridges, a science communication project on the Bay of Bengal delta. She is a member of the inaugural Oxford Climate Journalism Network and, in 2021, was named one of 16 Women Restoring the Earth by the Global Landscapes Forum."
+  },
+  {
+    "Day": "Day 2",
+    "Time": "2:50 pm – 3:50 pm",
     " Title of the Talk": "Panel Discussion: Climate Science and Climate Policy: Solutions and Adaptations",
-    "Speaker Name": "Moderated by Dr Krishna Gupta, IAS"
+    "Speaker Name": "Moderated by Dr Krishna Gupta, IAS",
+    "Profile of the Speaker": "Dr Krishna Gupta, IAS, is the State Election Commissioner of West Bengal and brings extensive experience in public administration and climate governance."
+  },
+  {
+    "Day": "Day 2",
+    "Time": "3:50 pm – 4:00 pm",
+    " Title of the Talk": "Concluding Remarks and Vote of Thanks",
+    "Speaker Name": "Prof. Shivani Krishna",
+    "Profile of the Speaker": "Prof Shivani Krishna is an Assistant Professor of Biology and Faculty Coordinator of Natural Sciences at 3CS, Ashoka University."
   }
 ];
