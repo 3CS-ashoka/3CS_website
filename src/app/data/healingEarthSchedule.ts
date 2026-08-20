@@ -103,7 +103,7 @@ export const healingEarthSchedule = [
     "Day": "Day 2",
     "Time": "10:15 am – 10:45 am",
     " Title of the Talk": "TBA",
-    "Speaker Name": "TBA"
+    "Speaker Name": ""
   },
   {
     "Day": "Day 2",
