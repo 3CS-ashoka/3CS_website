@@ -3,15 +3,11 @@ export const healingEarthSchedule = [
     "Day": "Day 1",
     "Time": "10:30 am – 10:45 am",
     " Title of the Talk": "Introductory remarks on Climate Change: The Imperative to Act Now Science, Economics, and the Strategic Path Forward for India",
-    "Speaker Name": "Prof Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat\n\nProf Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat",
+    "Speaker Name": "Prof Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat",
     "Speakers": [
       {
         "name": "Prof Imroze Khan, Director- 3CS and Associate Professor of Biology, Ashoka University, Sonipat",
         "profile": "Prof Imroze Khan is the Director of 3CS and an Associate Professor of Biology at Ashoka University, Sonipat."
-      },
-      {
-        "name": "Prof Shivani Krishna, Assistant Professor of Biology, Ashoka University, Sonipat",
-        "profile": "Prof Shivani Krishna is an Assistant Professor of Biology and Faculty Coordinator of Natural Sciences at 3CS, Ashoka University."
       }
     ]
   },
