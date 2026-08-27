@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { healingEarthSchedule } from "../data/healingEarthSchedule";
 import { ScheduleModal } from "../components/ScheduleModal";
 
 interface ModalState {
   isOpen: boolean;
   title: string;
-  content: string;
+  content: ReactNode;
   photoUrl?: string;
 }
 
@@ -28,6 +28,7 @@ const getSpeakerPhoto = (name: string) => {
   if (name.includes("Gaurav Garg") || name.includes("Gaurav C. Garg")) return "/images/photos/speaker_photos/Gaurav Garg.png";
   if (name.includes("Krishna Gupta")) return "/images/photos/speaker_photos/Krishna Gupta.jpg";
   if (name.includes("Sahana Ghosh") || name.includes("Sahaana Ghosh")) return "/images/photos/speaker_photos/Sahana Ghosh.jpg";
+  if (name.includes("R R Rashmi") || name.includes("Rajani Ranjan Rashmi")) return "https://www.teriin.org/sites/default/files/styles/medium/public/pictures/2018-12/rr-rashmi.jpg?itok=eCZ_Gd4R";
   return undefined;
 };
 
@@ -54,8 +55,31 @@ export function HealingEarthWorkshop() {
   const day1Schedule = healingEarthSchedule.filter(item => item.Day === "Day 1");
   const day2Schedule = healingEarthSchedule.filter(item => item.Day === "Day 2");
 
-  const openModal = (title: string, content: string, photoUrl?: string) => {
+  const openModal = (title: string, content: ReactNode, photoUrl?: string) => {
     setModalState({ isOpen: true, title, content, photoUrl });
+  };
+
+  const openSpeakerProfile = (name: string, profile: string, profileUrl?: string, photoUrl?: string) => {
+    openModal(
+      name,
+      profileUrl ? (
+        <>
+          {profile}
+          {"\n\n"}
+          <a
+            href={profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0d3862] font-medium underline underline-offset-2 hover:text-[#1a6bb5] break-all"
+          >
+            {profileUrl}
+          </a>
+        </>
+      ) : (
+        profile
+      ),
+      photoUrl
+    );
   };
 
   const renderScheduleTable = (schedule: typeof healingEarthSchedule) => (
@@ -135,7 +159,12 @@ export function HealingEarthWorkshop() {
                   <button
                     onClick={() => {
                       const linkedName = speakerStr.replace(/^Moderated by /, "");
-                      openModal(linkedName, item["Profile of the Speaker"]!, getSpeakerPhoto(linkedName));
+                      openSpeakerProfile(
+                        linkedName,
+                        item["Profile of the Speaker"]!,
+                        "Profile URL" in item ? item["Profile URL"] : undefined,
+                        getSpeakerPhoto(linkedName)
+                      );
                     }}
                     className="inline text-sm font-normal text-[#0d3862] underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid transition-colors"
                   >
@@ -144,7 +173,14 @@ export function HealingEarthWorkshop() {
                 </p>
               ) : hasProfile ? (
                 <button
-                  onClick={() => openModal(speakerStr || "", item["Profile of the Speaker"]!, getSpeakerPhoto(speakerStr || ""))}
+                  onClick={() =>
+                    openSpeakerProfile(
+                      speakerStr || "",
+                      item["Profile of the Speaker"]!,
+                      "Profile URL" in item ? item["Profile URL"] : undefined,
+                      getSpeakerPhoto(speakerStr || "")
+                    )
+                  }
                   className="w-full text-[#0d3862] font-medium text-sm text-left leading-snug py-1.5 md:py-0 underline decoration-dotted decoration-[#0d3862]/40 underline-offset-4 hover:decoration-solid transition-colors whitespace-pre-line"
                 >
                   {speakerStr}
@@ -228,17 +264,6 @@ export function HealingEarthWorkshop() {
 
             <div className="flex flex-col gap-3 shrink-0">
               <a
-                href="https://forms.gle/8WuppouCMiagsRGA9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-lg font-bold text-sm transition-all shadow-lg shadow-emerald-900/30"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-                Register Now
-              </a>
-              <a
                 href="https://calendar.google.com/calendar/r/eventedit?dates=20260911T000000Z/20260913T000000Z&text=The+Healing+Earth+Workshop+Series&location=Ashoka+University&details=Ideas+and+Conversations+on+Climate+Change+and+Sustainability"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -250,7 +275,7 @@ export function HealingEarthWorkshop() {
                 Add to Google Calendar
               </a>
               <a
-                href="https://drive.google.com/file/d/1Pb3z8FHvjqHcxKjYZohuigrQS8YGmYcV/view?usp=sharing"
+                href="https://drive.google.com/file/d/11A8wNH08Y51xUqTgsoMMNRA-r2ODvLTj/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all"
@@ -262,7 +287,7 @@ export function HealingEarthWorkshop() {
                 View Conference Flyer
               </a>
               <a
-                href="https://drive.google.com/file/d/1clY9SWE9PtBLcUdR3zjg6xC2KnK-ohm6/view?usp=drive_link"
+                href="https://drive.google.com/file/d/11A8wNH08Y51xUqTgsoMMNRA-r2ODvLTj/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all"

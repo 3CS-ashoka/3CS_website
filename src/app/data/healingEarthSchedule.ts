@@ -98,8 +98,10 @@ export const healingEarthSchedule = [
   {
     "Day": "Day 2",
     "Time": "10:15 am – 10:45 am",
-    " Title of the Talk": "TBA",
-    "Speaker Name": ""
+    " Title of the Talk": "The climate change crisis: How should India respond?",
+    "Speaker Name": "R R Rashmi, IAS, Distinguished Fellow, Green Shipping-TERI",
+    "Profile of the Speaker": "R R Rashmi, IAS (Retd), is a Distinguished Fellow, Green Shipping at The Energy and Resources Institute (TERI). He is an expert on climate change policy, strategy, carbon markets, and international negotiations. He served as India's principal negotiator under the UN Framework Convention on Climate Change and as Special Secretary in the Ministry of Environment, Forest and Climate Change.",
+    "Profile URL": "https://www.teriin.org/profile/rr-rashmi"
   },
   {
     "Day": "Day 2",
@@ -127,9 +129,9 @@ export const healingEarthSchedule = [
     "Day": "Day 2",
     "Time": "12:00 pm – 12:30 pm",
     " Title of the Talk": "Carbon Pricing Pathways for India",
-    "Speaker Name": "Prof Shreekant Gupta, Visiting Senior Fellow at The Centre for Social and Economic Progress (CSEP), New Delhi",
+    "Speaker Name": "Prof Shreekant Gupta, Visiting Senior Fellow at Centre for Social and Economic Progress (CSEP), New Delhi",
     "Abstract": "The talk will make the case for carbon pricing as an incentive mechanism for mitigation of GHG emissions. It will review international experience in this regard and the takeaways for India. Finally, it will analyse the nascent Indian Carbon Credit and Trading Scheme (CCTS), its current status, future direction and role in India's overall climate policy.",
-    "Profile of the Speaker": "Prof Shreekant Gupta is a Professor and Visiting Senior Fellow at The Centre for Social and Economic Progress (CSEP), New Delhi. He specialises in environmental economics, climate policy, and energy economics, with extensive research on carbon pricing mechanisms, air quality, and sustainable development in the Indian context."
+    "Profile of the Speaker": "Prof Shreekant Gupta is a Professor and Visiting Senior Fellow at Centre for Social and Economic Progress (CSEP), New Delhi. He specialises in environmental economics, climate policy, and energy economics, with extensive research on carbon pricing mechanisms, air quality, and sustainable development in the Indian context."
   },
   {
     "Day": "Day 2",
