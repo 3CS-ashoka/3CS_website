@@ -287,7 +287,7 @@ export function HealingEarthWorkshop() {
                 View Conference Flyer
               </a>
               <a
-                href="https://drive.google.com/file/d/11A8wNH08Y51xUqTgsoMMNRA-r2ODvLTj/view?usp=sharing"
+                href="https://drive.google.com/file/d/1d-jSZF8hvCzXC82QTj2qI8gysYsivQL5/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all"
