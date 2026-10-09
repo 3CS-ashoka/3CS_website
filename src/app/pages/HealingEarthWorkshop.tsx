@@ -303,7 +303,7 @@ export function HealingEarthWorkshop() {
         </div>
 
         <p className="absolute bottom-1 right-1 text-[11px] text-white/50 tracking-wide pointer-events-none">
-          Photo credit: Dipendra Nath Basu
+          Photo credit: Dipendra Nath Basu · deploy-check
         </p>
       </section>
 
