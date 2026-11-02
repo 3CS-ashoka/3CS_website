@@ -139,7 +139,7 @@ export function Home() {
                 <SDGLogo className="w-16 h-16" />
               </div>
               <div>
-                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">SDG Export</h3>
+                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">SDG Expo</h3>
                 <p className="text-gray-600">Annual Sustainability Showcase</p>
               </div>
             </div>
