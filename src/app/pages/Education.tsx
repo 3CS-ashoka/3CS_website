@@ -1,6 +1,6 @@
-import { HeroBanner } from "../components/HeroBanner";
+﻿import { HeroBanner } from "../components/HeroBanner";
 
-export function Initiatives() {
+export function Education() {
   const programs = [
     {
       title: "SDG Export",
