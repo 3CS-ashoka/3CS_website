@@ -3,7 +3,7 @@
 export function Education() {
   const programs = [
     {
-      title: "SDG Export",
+      title: "SDG Expo",
       description: "The SDG Expo at Ashoka University marks the observance of UN SDG Day by creating a dynamic platform to showcase the university's commitment to sustainable development. Bringing together students, faculty, and partners, the Expo highlights innovative projects, research, and initiatives aligned with the Sustainable Development Goals.",
       link: "/sdg-expo"
     },
