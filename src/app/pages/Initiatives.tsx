@@ -1,7 +1,17 @@
 import { HeroBanner } from "../components/HeroBanner";
 
-export function Education() {
+export function Initiatives() {
   const programs = [
+    {
+      title: "SDG Export",
+      description: "The SDG Expo at Ashoka University marks the observance of UN SDG Day by creating a dynamic platform to showcase the university's commitment to sustainable development. Bringing together students, faculty, and partners, the Expo highlights innovative projects, research, and initiatives aligned with the Sustainable Development Goals.",
+      link: "/sdg-expo"
+    },
+    {
+      title: "Healing Earth Workshop",
+      description: "Interactive workshops focusing on practical environmental stewardship, ecological restoration, and sustainability practices for local communities and Ashoka partners.",
+      link: "/healing-earth-workshop"
+    },
     {
       title: "3CS Distinguished Lecture Series",
       description: "A public lecture series featuring leading voices on climate and society, including writers, scholars, artists, and practitioners."
@@ -37,7 +47,12 @@ export function Education() {
               <div key={index} className="bg-white border-2 border-gray-200 p-8 rounded-lg hover:border-[#0d3862] hover:shadow-lg transition-all duration-300">
                 <h3 className="mb-4 text-2xl text-[#0d3862]">
                   {program.link ? (
-                    <a href={program.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    <a 
+                      href={program.link} 
+                      target={program.link.startsWith('http') ? "_blank" : "_self"} 
+                      rel="noopener noreferrer" 
+                      className="hover:underline"
+                    >
                       {program.title}
                     </a>
                   ) : (

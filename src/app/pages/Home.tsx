@@ -109,51 +109,7 @@ export function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <a href="/healing-earth-workshop" className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300 block group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-[#0d3862] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">Healing Earth Workshop</h3>
-                <p className="text-gray-600">Annual Flagship Event</p>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed">
-              The Healing Earth Workshop is a flagship annual event organised by the Centre for Climate Change and Sustainability (3CS) to facilitate conversations around the effects of the climate crisis and its wider impact on our world today. Launched in 2021, the workshop aims to bring together researchers, practitioners, and faculty to explore the links, trade-offs, and tensions at the nexus of climate change, health, and ecosystems.
-            </p>
-            <div className="mt-4 inline-flex items-center text-[#0d3862] gap-2 group-hover:gap-3 transition-all">
-              <span>Learn more about Healing Earth Workshop</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </a>
-
-          <a href="/sdg-expo" className="bg-white text-gray-900 p-8 rounded-lg hover:shadow-2xl transition-all duration-300 block group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
-                <SDGLogo className="w-16 h-16" />
-              </div>
-              <div>
-                <h3 className="text-2xl text-[#0d3862] mb-1 group-hover:underline">SDG Expo</h3>
-                <p className="text-gray-600">Annual Sustainability Showcase</p>
-              </div>
-            </div>
-            <p className="text-gray-700 leading-relaxed">
-              The SDG Expo at Ashoka University marks the observance of UN SDG Day by creating a dynamic platform to showcase the university's commitment to sustainable development. Bringing together students, faculty, and partners, the Expo highlights innovative projects, research, and initiatives aligned with the Sustainable Development Goals.
-            </p>
-            <div className="mt-4 inline-flex items-center text-[#0d3862] gap-2 group-hover:gap-3 transition-all">
-              <span>Learn more about SDG Expo</span>
-              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </a>
-        </div>
+        
 
         <div className="text-center mt-12">
           <a href="https://www.ashoka.edu.in/events/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white border-2 border-white px-8 py-3 rounded-md hover:bg-white hover:text-[#0d3862] transition-all text-lg">
