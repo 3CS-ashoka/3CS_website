@@ -109,76 +109,62 @@ export function Home() {
           </p>
         </div>
 
-       <div className="flex justify-center">
-  {/* Event Card: BEE Symposium (Centered text & elements) */}
-  <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col items-center text-center justify-between hover:shadow-lg transition-all duration-300 max-w-2xl w-full">
-    <div className="flex flex-col items-center">
-      <span className="text-xs font-semibold text-[#0d3862] uppercase tracking-wider bg-blue-100/60 px-2.5 py-1 rounded">
-        Symposium
-      </span>
-      <h3 className="text-xl font-bold text-[#0d3862] mt-3 mb-2 text-center">
-        <a 
-          href="https://sites.google.com/ashoka.edu.in/bee" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          The Behaviour, Ecology, and Evolution (BEE) symposium
-        </a>
-      </h3>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">
-        The Behaviour, Ecology, and Evolution (BEE) symposium at Ashoka aims to bring together researchers and students working in these intertwined fields. The event will be a vibrant space for discussions on topics ranging from ecological dynamics and evolutionary processes to behavioral adaptations. The symposium aims to promote the exchange of ideas, build connections, and explore future collaborations within the research community. It will feature presentations from faculty members at Ashoka University, postdoctoral fellows, graduate students, and postgraduate and undergraduate students. There will be special research talks and discussions led by researchers working at the intersection of ecology, evolution, genetics, and theoretical biology from various institutes.
-      </p>
-    </div>
-    <a 
-      href="https://sites.google.com/ashoka.edu.in/bee" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="text-sm font-semibold text-[#0d3862] hover:underline inline-flex items-center gap-1 mt-2"
-    >
-      Visit Symposium Site &rarr;
-    </a>
-  </div>
-</div>
-
+        <div className="flex justify-center">
+          {/* Event Card: BEE Symposium (Centered text & elements) */}
+          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col items-center text-center justify-between hover:shadow-lg transition-all duration-300 max-w-2xl w-full">
+            <div className="flex flex-col items-center">
+              <span className="text-xs font-semibold text-[#0d3862] uppercase tracking-wider bg-blue-100/60 px-2.5 py-1 rounded">
+                Symposium
+              </span>
+              <h3 className="text-xl font-bold text-[#0d3862] mt-3 mb-2 text-center">
+                <a 
+                  href="https://sites.google.com/ashoka.edu.in/bee" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:underline"
+                >
+                  The Behaviour, Ecology, and Evolution (BEE) symposium
+                </a>
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">
+                The Behaviour, Ecology, and Evolution (BEE) symposium at Ashoka aims to bring together researchers and students working in these intertwined fields. The event will be a vibrant space for discussions on topics ranging from ecological dynamics and evolutionary processes to behavioral adaptations. The symposium aims to promote the exchange of ideas, build connections, and explore future collaborations within the research community. It will feature presentations from faculty members at Ashoka University, postdoctoral fellows, graduate students, and postgraduate and undergraduate students. There will be special research talks and discussions led by researchers working at the intersection of ecology, evolution, genetics, and theoretical biology from various institutes.
+              </p>
+            </div>
+            <a 
+              href="https://sites.google.com/ashoka.edu.in/bee" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm font-semibold text-[#0d3862] hover:underline inline-flex items-center gap-1 mt-2"
+            >
+              Visit Symposium Site &rarr;
+            </a>
+          </div>
+        </div>
       </HeroBanner>
 
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-            <div>
+          {/* Top Row: Our Vision & Key Highlights */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12">
+            <div className="flex flex-col justify-center">
               <h2 className="mb-4 md:mb-6 text-3xl md:text-4xl">Our Vision & Resources</h2>
               <p className="text-gray-700 text-base md:text-lg mb-6 md:mb-8 leading-relaxed text-justify">
                 To create a leading research centre on climate and sustainability with the country's most vibrant and sophisticated climate and sustainability communication program, which will bring together scientists, humanists, and social scientists, along with professionals and practitioners in the field.
               </p>
-              <a href="/about" className="inline-flex items-center text-[#0d3862] hover:gap-3 gap-2 transition-all text-base md:text-lg group mb-8">
-                Read more about our vision
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-
-              <div className="bg-white border-2 border-[#0d3862] p-6 rounded-lg mt-8">
-                <h3 className="text-xl text-[#0d3862] mb-4 flex items-center gap-2">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Apply for Internship
-                </h3>
-                <p className="text-gray-600 mb-4 text-sm text-justify">Join our team and contribute to meaningful climate research and sustainability initiatives.</p>
-                <a href="https://forms.gle/mFGPkfX9fonGbJry9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#0d3862] text-white px-6 py-3 rounded-md hover:bg-[#1a5280] transition-all w-full justify-center">
-                  <span>Apply Now</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <div>
+                <a href="/about" className="inline-flex items-center text-[#0d3862] hover:gap-3 gap-2 transition-all text-base md:text-lg group">
+                  Read more about our vision
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
               </div>
             </div>
 
             <div>
-              <div className="bg-[#0d3862] text-white p-8 rounded-lg h-full flex flex-col">
+              <div className="bg-[#0d3862] text-white p-8 rounded-lg h-full flex flex-col justify-center">
                 <h3 className="mb-6 text-2xl">Key Highlights</h3>
-                <ul className="space-y-4 mb-6 flex-1">
+                <ul className="space-y-4">
                   <li className="flex items-start">
                     <div className="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -204,22 +190,67 @@ export function Home() {
                     <span className="leading-relaxed text-justify">Focus on AI and emerging technologies for climate solutions</span>
                   </li>
                 </ul>
-                <div className="border-t border-white border-opacity-20 pt-6">
-                  <a href="https://drive.google.com/file/d/1eSGUPeWioML5f4qWjHmn-YMBLJ-BiBV_/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#0d3862] px-6 py-3 rounded-md hover:bg-gray-100 transition-all group w-full justify-center">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    <span>View Centre Brochure</span>
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Bottom Row: Apply for Internship (Left) & Centre Brochure (Adjacent Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Left Card: Apply for Internship */}
+            <div className="bg-white border-2 border-[#0d3862] p-8 rounded-lg flex flex-col justify-between shadow-sm">
+              <div>
+                <h3 className="text-xl text-[#0d3862] mb-4 flex items-center gap-2 font-semibold">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Apply for Internship
+                </h3>
+                <p className="text-gray-600 mb-6 text-sm text-justify leading-relaxed">
+                  Join our team and contribute to meaningful climate research and sustainability initiatives.
+                </p>
+              </div>
+              <a 
+                href="https://forms.gle/mFGPkfX9fonGbJry9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center gap-2 bg-[#0d3862] text-white px-6 py-3 rounded-md hover:bg-[#1a5280] transition-all w-full justify-center font-medium"
+              >
+                <span>Apply Now</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Right Card: Centre Brochure */}
+            <div className="bg-white border-2 border-[#0d3862] p-8 rounded-lg flex flex-col justify-between shadow-sm">
+              <div>
+                <h3 className="text-xl text-[#0d3862] mb-4 flex items-center gap-2 font-semibold">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  Centre Brochure
+                </h3>
+                <p className="text-gray-600 mb-6 text-sm text-justify leading-relaxed">
+                  Explore our interdisciplinary research verticals, flagship programmes, and sustainability initiatives at Ashoka University.
+                </p>
+              </div>
+              <a 
+                href="https://drive.google.com/file/d/1eSGUPeWioML5f4qWjHmn-YMBLJ-BiBV_/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center gap-2 bg-[#0d3862] text-white px-6 py-3 rounded-md hover:bg-[#1a5280] transition-all w-full justify-center group font-medium"
+              >
+                <span>View Centre Brochure</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </section>
+
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -243,44 +274,3 @@ export function Home() {
               <a href="https://in.linkedin.com/showcase/office-of-sustainability-ashoka-university/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#0077b5] text-white px-6 py-3 rounded-md hover:bg-[#006399] transition-all group">
                 <span>Follow on LinkedIn</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <div className="mt-6 bg-white rounded-lg p-4 border border-blue-200">
-                <p className="text-sm text-gray-600 italic">Latest professional updates and research insights</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-purple-100 border-2 border-pink-200 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl text-pink-600">Instagram</h3>
-              </div>
-              <p className="text-gray-700 mb-6">Discover behind-the-scenes moments, campus sustainability initiatives, and community engagement through our visual stories.</p>
-              <a href="https://www.instagram.com/livegreenashoka/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-6 py-3 rounded-md hover:shadow-lg transition-all group">
-                <span>Follow on Instagram</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <div className="mt-6 bg-white rounded-lg p-4 border border-pink-200">
-                <p className="text-sm text-gray-600 italic">Visual stories from our sustainability journey</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 text-lg">
-              Join our growing community and be part of the climate action movement
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
-
